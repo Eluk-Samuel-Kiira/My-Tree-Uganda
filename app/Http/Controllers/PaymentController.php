@@ -10,4 +10,10 @@ class PaymentController extends Controller
     {
         return view('payments.methods');
     }
+
+    public function makePayments(Request $request)
+    {
+        $pay_option = $request->option;
+        return view('payments.confirmpay', compact('pay_option'));
+    }
 }

@@ -21,6 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/payment/modes', [PaymentController::class, 'indexPay'])->name('payment.modes');
+Route::get('/payments/options/{option}', [PaymentController::class, 'makePayments'])->name('make.payments');
+
+
 Route::get('/account/modes', [UserController::class, 'accountStatus'])->name('account.modes');
 
 Route::middleware([
@@ -38,6 +41,5 @@ Route::middleware([
     //non resources
     Route::get('/users/crud/index', [UserController::class, 'userIndex'])->name('users.index');
     Route::get('/user/delete/{id}', [UserController::class, 'userDestroy'])->name('user.destroy');
-    //Route::get('/create/gallery', [UserController::class, 'createGallery'])->name('gallery.create');
 
 });

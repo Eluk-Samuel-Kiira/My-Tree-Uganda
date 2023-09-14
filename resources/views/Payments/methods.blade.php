@@ -14,15 +14,15 @@
                 <div class="flex justify-center">
                     <div class="px-4 py-4">
                         <div class="">
-                            <div class="inline-flex items-center px-4 py-4 border font-semibold text-xs text-indigo-700 uppercase">
+                            <a href="{{ route('make.payments', $options = 'mtn_momo') }}" class="inline-flex items-center px-4 py-4 border font-semibold text-xs text-indigo-700 uppercase">
                                 <img src="{{ asset('images/mtn_momo.jpg')}}" alt="MTN MOMO" style="max-width: 100px; height: 52px;" />
-                            </div>
-                            <div class="inline-flex items-center px-4 py-4 border font-semibold text-xs text-indigo-700 uppercase">
+                            </a>
+                            <a href="{{ route('make.payments', $options = 'airtel_momo') }}" class="inline-flex items-center px-4 py-4 border font-semibold text-xs text-indigo-700 uppercase">
                                 <img src="{{ asset('images/airtelmomo.png')}}" alt="AIRTEL MOMO" style="max-width: 100px" />
-                            </div>
-                            <div class="inline-flex items-center px-4 py-4 border font-semibold text-xs text-indigo-700 uppercase">
+                            </a>
+                            <a href="{{ route('make.payments', $options = 'credit_card') }}" class="inline-flex items-center px-4 py-4 border font-semibold text-xs text-indigo-700 uppercase">
                                 <img src="{{ asset('images/visamaster.png')}}" alt="CREDIT CARD" style="max-width: 100px; height: 52px;" />
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
