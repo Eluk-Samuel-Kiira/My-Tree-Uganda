@@ -33,7 +33,7 @@ Route::middleware([
     })->name('dashboard');
 
     Route::resource('resource', ResourceController::class);
-    Route::resource('gallery', ResourceController::class);
+    Route::resource('gallery', GalleryController::class);
 
     //non resources
     Route::get('/users/crud/index', [UserController::class, 'userIndex'])->name('users.index');

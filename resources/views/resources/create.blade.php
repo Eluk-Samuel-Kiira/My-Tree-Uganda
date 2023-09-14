@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
                     <x-validation-errors class="mb-4" />
-                    <form method="POST" action="{{ route('resource.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('resource.store') }}" enctype="multipart/form-data" style="width: 60%; margin: 0 auto;">
                         @csrf
                         <x-input id="user_id" class="block mt-1 w-full" type="hidden" name="user_id" value="{{(Auth::user()->id)}}" />
                         <div>

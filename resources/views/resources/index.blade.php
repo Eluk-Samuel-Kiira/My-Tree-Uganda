@@ -84,7 +84,7 @@
                                             </td>
                                         </tr>
                                     @empty
-                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-300">
                                             <td colspan="2"
                                                 class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                                                 {{ __('No Resource found') }}

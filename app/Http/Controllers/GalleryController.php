@@ -15,7 +15,8 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        return view('resources.gallery');
+        $galleries = Gallery::whereNot('deleted', 1)->get();
+        return view('gallery.index', compact('galleries'));
     }
 
     /**
@@ -25,7 +26,7 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        //
+        return view('gallery.create');
     }
 
     /**
@@ -36,7 +37,18 @@ class GalleryController extends Controller
      */
     public function store(StoreGalleryRequest $request)
     {
-        //
+        $gallery = new Gallery();
+        $file = $request->file('image');
+        if($file != null) {
+            $fileName = time().'.'.$file->extension();
+            $file->move(storage_path('app/public/Gallery'),$fileName);
+            $gallery->image = $fileName;
+        }
+        $gallery->title = $request->title;
+        $gallery->description = $request->description;
+        $gallery->user_id = $request->user_id;
+        $gallery->save();
+        return redirect()->route('gallery.index')->with('status', 'New Gallery Information Has Been Shared Successfully');
     }
 
     /**
@@ -58,7 +70,8 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery)
     {
-        //
+        $gallery->update(['deleted' => 1]);
+        return redirect()->back()->with('status', 'The Image Has Been Deleted Successfully');
     }
 
     /**

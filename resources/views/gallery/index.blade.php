@@ -8,11 +8,6 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="flex justify-center">
-                    <h2 class="inline-flex items-center px-4 py-2 bg-white border border-indigo-700 rounded-md font-semibold text-xs text-indigo-700 uppercase hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 transition ease-in-out duration-150">
-                        {{ __('Our Gallery') }}
-                    </h2>
-                </div>
                 <div class="py-12">
                     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -43,11 +38,48 @@
                                                     {{__('Image')}}
                                                 </th>
                                                 <th scope="col" class="px-6 py-3 lg:w-1/4">
+                                                    {{__('Author')}}
+                                                </th>
+                                                <th scope="col" class="px-6 py-3 lg:w-1/4">
                                                     {{__('Actions')}}
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @forelse ($galleries as $gallery)
+                                                <tr class="bg-white border-b dark:bg-gray-300 dark:border-gray-300">
+                                                    <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
+                                                        {{ $gallery->title }}
+                                                    </td>
+                                                    <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
+                                                        {{ $gallery->description }}
+                                                    </td>
+                                                    <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
+                                                        <img src="{{ asset('storage/Gallery')}}/{{$gallery->image }}" style="max-width: 100px" />
+                                                    </td>
+                                                    <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
+                                                        {{ $gallery->poster->name }}
+                                                    </td>        
+                                                    <td class="px-4 py-2">
+                                                        <div class="flex items-center justify-start">
+                                                            @if(auth()->user()->role == 'admin')
+                                                                <x-danger-button class="ml-2">
+                                                                    <a href="{{ route('gallery.edit', $gallery) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                                                        {{__('Delete')}}
+                                                                    </a>
+                                                                </x-danger-button>
+                                                            @endif
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            @empty
+                                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                                    <td colspan="2"
+                                                        class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                                        {{ __('No Gallery found') }}
+                                                    </td>
+                                                </tr>
+                                            @endforelse
                                         </tbody>
                                     </table>
                                 </div>
