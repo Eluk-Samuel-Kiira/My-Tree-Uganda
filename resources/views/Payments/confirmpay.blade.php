@@ -12,7 +12,7 @@
                     <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
                         <img src="{{ asset('images/mtn_momo.jpg')}}" alt="MTN MOMO" style="max-width: 100px; height: 52px;" />
                         <div class="flex justify-center px-3 py-2 border-l-4 border-indigo-400 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700">
-                            {{ __('Checkout in to complete payment of UGX 1,000,000') }}
+                            {{ __('Checkout to complete payment of UGX 1,000,000') }}
                         </div>
                         <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" style="width: 60%; margin: 0 auto;">
                             @csrf
@@ -49,7 +49,7 @@
                     <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
                         <img src="{{ asset('images/airtelmomo.png')}}" alt="AIRTEL MOMO" style="max-width: 100px" />
                         <div class="flex justify-center px-3 py-2 border-l-4 border-indigo-400 text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700">
-                            {{ __('Checkout in to complete payment of UGX 1,000,000') }}
+                            {{ __('Checkout to complete payment of UGX 1,000,000') }}
                         </div>
                         <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" style="width: 60%; margin: 0 auto;">
                             @csrf
@@ -100,6 +100,9 @@
                             <div>
                                 <x-label for="amount" value="{{ __('Select Amount') }}" />
                                 <div>
+                                    <x-input id="amount1" type="checkbox" name="amount" value="50000" />
+                                    <label for="amount1">50,000 UGX/year for Basic(Friends of My Tree Initiative)</label><br>
+
                                     <x-input id="amount1" type="checkbox" name="amount" value="1000000" />
                                     <label for="amount1">1,000,000 UGX/year for Basic(Friends of My Tree Initiative)</label><br>
 

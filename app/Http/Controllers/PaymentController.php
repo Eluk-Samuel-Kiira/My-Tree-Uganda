@@ -16,4 +16,14 @@ class PaymentController extends Controller
         $pay_option = $request->option;
         return view('payments.confirmpay', compact('pay_option'));
     }
+
+    public function paymentStatus()
+    {
+        return view('payments.paystatus');
+    }
+
+    public function verifyPayment()
+    {
+
+    }
 }

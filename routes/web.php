@@ -41,5 +41,9 @@ Route::middleware([
     //non resources
     Route::get('/users/crud/index', [UserController::class, 'userIndex'])->name('users.index');
     Route::get('/user/delete/{id}', [UserController::class, 'userDestroy'])->name('user.destroy');
+    Route::get('/payment/status', [PaymentController::class, 'paymentStatus'])->name('status.payments');
+    Route::get('/payment/verify', [PaymentController::class, 'verifyPayment'])->name('verify.payment');
+
+
 
 });
