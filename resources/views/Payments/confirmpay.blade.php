@@ -8,6 +8,23 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                @php
+                    $tx_ref = uniqid();
+                    $user_id = Auth::user()->id;
+                    // Extract the payment amount from the form
+                    $amount = 1000000; // Default amount, you can customize this
+
+                    if (request()->has('amount')) {
+                        $amount = request('amount');
+                    }
+
+                    // Create a new record in the transactions table
+                    \App\Models\Transaction::create([
+                        'user_id' => $user_id,
+                        'tx_ref' => $tx_ref,
+                        'amount' => $amount,
+                    ]);
+                @endphp
                 @if($pay_option == 'mtn_momo')
                     <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
                         <img src="{{ asset('images/mtn_momo.jpg')}}" alt="MTN MOMO" style="max-width: 100px; height: 52px;" />
@@ -17,7 +34,7 @@
                         <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" style="width: 60%; margin: 0 auto;">
                             @csrf
                             <x-input class="block mt-1 w-full" type="text" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
-                            <x-input class="block mt-1 w-full" type="text" name="tx_ref" value="{{ rand(1000000, 9999999) }}" />
+                            <x-input class="block mt-1 w-full" type="text" name="tx_ref" value="{{ $tx_ref }}" />
                             <x-input class="block mt-1 w-full" type="text" name="currency" value="UGX" />
                             <x-input class="block mt-1 w-full" type="text" name="amount" value="10000" />
                             <x-input class="block mt-1 w-full" type="text" name="meta[token]" value="54" />
@@ -54,7 +71,7 @@
                         <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" style="width: 60%; margin: 0 auto;">
                             @csrf
                             <x-input class="block mt-1 w-full" type="text" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
-                            <x-input class="block mt-1 w-full" type="text" name="tx_ref" value="{{ rand(1000000, 9999999) }}" />
+                            <x-input class="block mt-1 w-full" type="text" name="tx_ref" value="{{ $tx_ref }}" />
                             <x-input class="block mt-1 w-full" type="text" name="currency" value="UGX" />
                             <x-input class="block mt-1 w-full" type="text" name="amount" value="10000" />
                             <x-input class="block mt-1 w-full" type="text" name="meta[token]" value="54" />
@@ -91,7 +108,7 @@
                         <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" style="width: 60%; margin: 0 auto;">
                             @csrf
                             <x-input class="block mt-1 w-full" type="text" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
-                            <x-input class="block mt-1 w-full" type="text" name="tx_ref" value="{{ rand(1000000, 9999999) }}" />
+                            <x-input class="block mt-1 w-full" type="text" name="tx_ref" value="{{ $tx_ref }}" />
                             <x-input class="block mt-1 w-full" type="text" name="currency" value="UGX" />
                             <x-input class="block mt-1 w-full" type="text" name="meta[token]" value="54" />
                             <x-input class="block mt-1 w-full" type="text" name="payment_options" value="mobilemoneyuganda" />
