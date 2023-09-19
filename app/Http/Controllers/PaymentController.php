@@ -33,7 +33,7 @@ class PaymentController extends Controller
                 $user->update(['status' => 1]);
             }
         }
-        return redirect()->route('dashboard')->with('statu', 'Payment Successful, Enjoy the Dashbord');
+        return redirect()->route('dashboard')->with('status', 'Payment Successful, Enjoy the Dashbord');
 
     }
 }
