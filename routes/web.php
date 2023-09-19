@@ -5,6 +5,7 @@ use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,12 @@ use App\Http\Controllers\GalleryController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//landing page routes
+Route::get("/",[LandingPageController::class,'welcomePage'])->name('landing.index');
+Route::get("/friends",[LandingPageController::class,'friendsPage'])->name('landing.friends');
+Route::get("/about",[LandingPageController::class,'aboutUsPage'])->name('landing.about');
+//landing page routes
+
 Route::get('/payment/modes', [PaymentController::class, 'indexPay'])->name('payment.modes');
 Route::get('/payments/options/{option}', [PaymentController::class, 'makePayments'])->name('make.payments');
 
