@@ -2,19 +2,21 @@
     <div class="py-12">
         <div class="max-w-7xl h-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="flex justify-center">
-                    <h2 id="chatTitle" class="inline-flex items-center
-                            px-4 py-2 bg-white border border-indigo-700 rounded-md
-                            font-semibold text-xs text-indigo-700 uppercase hover:bg-gray-50
-                            focus:outline-none focus:ring-2 focus:ring-indigo-500
-                            focus:ring-offset-2 disabled:opacity-25 transition
-                            ease-in-out duration-150"
-                    >
+{{--                <div class="flex justify-center">--}}
+{{--                    @if(count($chats) > 0)--}}
+{{--                        <h2 id="chatTitle" class="inline-flex items-center--}}
+{{--                            px-4 py-2 bg-white border border-indigo-700 rounded-md--}}
+{{--                            font-semibold text-xs text-indigo-700 uppercase hover:bg-gray-50--}}
+{{--                            focus:outline-none focus:ring-2 focus:ring-indigo-500--}}
+{{--                            focus:ring-offset-2 disabled:opacity-25 transition--}}
+{{--                            ease-in-out duration-150"--}}
+{{--                        >--}}
 
-                    </h2>
-                </div>
+{{--                        </h2>--}}
+{{--                    @endif--}}
+{{--                </div>--}}
                 <!-- Chat messages container -->
-                <div class="mt-4 h-64 overflow-y-auto">
+                <div id="chatMessages" class="mt-4 h-64 overflow-y-auto">
                     @if(count($chats) > 0)
                         <div class="flex flex-col">
                             @forelse($chats as $chat)
@@ -53,7 +55,7 @@
                                                         <div>{{$chat->message}}</div>
                                                     </div>
                                                     <span class="text-xs text-gray-400 ml-3 self-end">{{$chat->created_at->format('H:i')}}</span>
-                                                    <span class="text-xs text-gray-400 ml-3 self-end date" hidden="hidden">
+                                                    <span class="text-xs text-gray-400 ml-3 self-end date">
                                                         @if ($isSameWeek)
                                                             {{ $createdDate->format('l') }} <!-- Display the day of the week -->
                                                         @else
@@ -120,4 +122,6 @@
     </div>
 
 </div>
+
+
 

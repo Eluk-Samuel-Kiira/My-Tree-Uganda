@@ -8,7 +8,7 @@ use App\Models\Chat;
 class MessageSection extends Component
 {
     protected $listeners = [
-        'refreshChats'=>'$refresh'
+        'refreshChats'=>'$refresh',
     ];
 
     public function render()
