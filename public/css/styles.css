@@ -631,6 +631,9 @@ section{
     padding: 200px 98px;
     color: white;
 }
+.left i{
+    margin-right: 20px;
+}
 .left h2 {
     font-family: Poppins, sans-serif;
     color: #fff;
@@ -713,7 +716,6 @@ section{
     color: white;
 }
 
-
 .custom-margin{
     margin-bottom: 52px;
 }
@@ -748,9 +750,11 @@ section{
 
 /*-----partner background---------*/
 
-
-
-
-
-
+.accordion-body a{
+    color: #00880F;
+    font-weight: bold;
+}
+.accordion-body a:hover{
+    color: #307be6;
+}
 
