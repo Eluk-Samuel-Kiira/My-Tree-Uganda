@@ -2,19 +2,19 @@
     <div class="py-12">
         <div class="max-w-7xl h-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-{{--                <div class="flex justify-center">--}}
-{{--                    @if(count($chats) > 0)--}}
-{{--                        <h2 id="chatTitle" class="inline-flex items-center--}}
-{{--                            px-4 py-2 bg-white border border-indigo-700 rounded-md--}}
-{{--                            font-semibold text-xs text-indigo-700 uppercase hover:bg-gray-50--}}
-{{--                            focus:outline-none focus:ring-2 focus:ring-indigo-500--}}
-{{--                            focus:ring-offset-2 disabled:opacity-25 transition--}}
-{{--                            ease-in-out duration-150"--}}
-{{--                        >--}}
-
-{{--                        </h2>--}}
-{{--                    @endif--}}
-{{--                </div>--}}
+                <div class="flex justify-center">
+                    @if(count($chats) > 0)
+                        <h2 class="inline-flex items-center
+                            px-4 py-2 bg-white border border-indigo-700 rounded-md
+                            font-semibold text-xs text-indigo-700 uppercase hover:bg-gray-50
+                            focus:outline-none focus:ring-2 focus:ring-indigo-500
+                            focus:ring-offset-2 disabled:opacity-25 transition
+                            ease-in-out duration-150"
+                        >
+                            GROUP CHATS
+                        </h2>
+                    @endif
+                </div>
                 <!-- Chat messages container -->
                 <div id="chatMessages" class="mt-4 h-64 overflow-y-auto">
                     @if(count($chats) > 0)
@@ -52,7 +52,16 @@
                                                     <div
                                                         class="text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
                                                     >
-                                                        <div>{{$chat->message}}</div>
+                                                        <div>
+                                                            @php
+                                                                try {
+                                                                    $decryptedMessage = \Illuminate\Support\Facades\Crypt::decryptString($chat->message);
+                                                                    echo $decryptedMessage;
+                                                                } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+                                                                    // Handle the decryption exception, e.g., log it or return an error message
+                                                                }
+                                                            @endphp
+                                                        </div>
                                                     </div>
                                                     <span class="text-xs text-gray-400 ml-3 self-end">{{$chat->created_at->format('H:i')}}</span>
                                                     <span class="text-xs text-gray-400 ml-3 self-end date">
@@ -92,7 +101,17 @@
                                                 <div
                                                     class="text-sm bg-white py-2 px-4 shadow rounded-xl"
                                                 >
-                                                    <div>{{$chat->message}}</div>
+                                                    <div>
+                                                        @php
+                                                            try {
+                                                                $decryptedMessage = \Illuminate\Support\Facades\Crypt::decryptString($chat->message);
+                                                                // Output or process the decrypted message here
+                                                                } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
+                                                                    // Handle the decryption exception, e.g., log it or return an error message
+                                                                }
+                                                        @endphp
+                                                        {{$decryptedMessage}}
+                                                    </div>
                                                 </div>
                                                 <span class="text-xs text-gray-400 ml-3">{{$chat->created_at->format('H:i')}}</span>
                                                 <span class="text-xs text-gray-400 ml-3 date" hidden="hidden">
@@ -122,6 +141,7 @@
     </div>
 
 </div>
+
 
 
 
