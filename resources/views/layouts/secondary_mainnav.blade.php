@@ -1,7 +1,7 @@
 <!--? MAIN NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
     <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <a class="navbar-brand d-flex align-items-center" href="{{route('landing.index')}}">
             <img src="/images/logo2.png" alt="logo" class="img-logo">
         </a>
         <button

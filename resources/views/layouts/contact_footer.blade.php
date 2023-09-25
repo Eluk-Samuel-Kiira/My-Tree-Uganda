@@ -97,8 +97,8 @@
                             <div class="accordion-body">
                                 <a href="#">Donate</a><br>
                                 <a href="#">Become a Member</a><br>
-                                <a href="#">Friends of My Tree Donors Group</a><br>
-                                <a href="#">Who we Are?</a>
+                                <a href="{{route('landing.friends')}}">Friends of My Tree Donors Group</a><br>
+                                <a href="{{route('landing.about')}}">Who we Are?</a>
                             </div>
                         </div>
                     </div>
@@ -148,34 +148,105 @@
     const currentYearPlaceholder = document.getElementById('currentYear');
     currentYearPlaceholder.textContent = currentYear;
 
-    //INCREMENT IMPACT NUMBERS
-    function incrementToNumber(targetNumber) {
-        const outputElement = document.getElementById("school-impact");
+    // Function to increment impact numbers
+    function incrementToNumber(targetNumber, outputElementId, startingNumber) {
+        const outputElement = document.getElementById(outputElementId);
 
-        let currentNumber = 0;
+        let currentNumber = startingNumber;
         const interval = setInterval(() => {
-            outputElement.innerHTML = `${currentNumber}`;
+            // Format the current number with commas
+            const formattedNumber = currentNumber.toLocaleString();
+
+            outputElement.innerHTML = formattedNumber;
             if (currentNumber >= targetNumber) {
                 clearInterval(interval); // Stop counting when the target is reached
             }
             currentNumber++;
-        }, 10); // 1 second interval between increments
+        }, 10); // 1-second interval between increments
     }
 
-    const myDiv = document.getElementById("schools");
+    const tabs = document.querySelectorAll('.nav-link'); // Get all tab links
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Start counting when the div is in view
-                incrementToNumber(50000); // You can change the target number as needed
-                observer.disconnect(); // Stop observing once counting has started
-            }
+    // Create a function to handle tab activation and counting
+    function activateAndCount(tabId) {
+        // Deactivate all tabs
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        // Activate the specified tab
+        const activeTab = document.querySelector(`[href="#${tabId}"]`);
+        activeTab.classList.add('active');
+
+        // Start counting when the tab's content is in view
+        const contentElement = document.getElementById(tabId);
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    switch (tabId) {
+                        case "schools":
+                            incrementToNumber(780000, "schools-1", 779800);
+                            incrementToNumber(235, "schools-2", 35);
+                            incrementToNumber(710000, "schools-3", 709800);
+                            break;
+                        case "forests":
+                            incrementToNumber(55000, "forests-1", 54800);
+                            incrementToNumber(8, "forests-2", 0);
+                            incrementToNumber(4147, "forests-3", 4000);
+                            break;
+                        case "roads":
+                            incrementToNumber(176500, "roads-1", 176300);
+                            incrementToNumber(18, "roads-2", 0);
+                            incrementToNumber(13000, "roads-3", 12800);
+                            break;
+                        case "religion":
+                            incrementToNumber(120000, "religion-1", 119800);
+                            incrementToNumber(25, "religion-2", 0);
+                            incrementToNumber(3100, "religion-3", 2900);
+                            break;
+                        default:
+                            break;
+                    }
+                    observer.disconnect(); // Stop observing once counting has started
+                }
+            });
+        });
+
+        // Observe the content element
+        observer.observe(contentElement);
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (event) => {
+            event.preventDefault();
+            const tabId = event.target.getAttribute('href').replace('#', '');
+            activateAndCount(tabId);
         });
     });
 
-    // Start observing the "myDiv" element
-    observer.observe(myDiv);
+    // Function to start counting for the "Schools" tab when it's in view
+    function observeSchoolsTab() {
+        const schoolsTabContent = document.getElementById("schools"); // Replace with the actual ID of the "Schools" tab content
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Start counting when the tab's content is in view
+                    incrementToNumber(780000, "schools-1", 779800);
+                    incrementToNumber(235, "schools-2", 35);
+                    incrementToNumber(710000, "schools-3", 709800);
+                    observer.disconnect(); // Stop observing once counting has started
+                }
+            });
+        });
+
+        // Observe the "Schools" tab content
+        observer.observe(schoolsTabContent);
+    }
+
+    // Call the function to observe the "Schools" tab when needed
+    observeSchoolsTab();
+
 </script>
 
 </body>

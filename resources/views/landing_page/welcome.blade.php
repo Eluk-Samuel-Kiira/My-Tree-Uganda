@@ -427,18 +427,19 @@
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
-                                        <div class="display-3" id="school-impact"></div>
-                                        <p>th is is</p>
+                                        <p>More than</p>
+                                        <div class="display-3" id="schools-1"></div>
+                                        <p>students engaged</p>
                                     </div>
                                     <div class="col-6 text-center">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <div class="display-3" id="schools-2"></div>
+                                        <p>schools participated</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <div class="display-3" id="schools-3"></div>
+                                        <p>trees grown</p>
                                     </div>
                                 </div>
                             </div>
@@ -456,18 +457,20 @@
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <div class="display-3" id="forests-1"></div>
+                                        <p>trees planted</p>
                                     </div>
                                     <div class="col-6 text-center">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <p>More than</p>
+                                        <div class="display-3" id="forests-2"></div>
+                                        <p>tree species</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <p>More than</p>
+                                        <div class="display-3" id="forests-3"></div>
+                                        <p>acres of reafforestation</p>
                                     </div>
                                 </div>
                             </div>
@@ -484,18 +487,20 @@
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <div class="display-3" id="roads-1"></div>
+                                        <p>Trees planted</p>
                                     </div>
                                     <div class="col-6 text-center">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <p>More than</p>
+                                        <div class="display-3" id="roads-2"></div>
+                                        <p>highways greened</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <p>More than</p>
+                                        <div class="display-3" id="roads-3"></div>
+                                        <p>drivers and pedestrians involoved</p>
                                     </div>
                                 </div>
                             </div>
@@ -511,18 +516,20 @@
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <div class="display-3" id="religion-1"></div>
+                                        <p>trees planted</p>
                                     </div>
                                     <div class="col-6 text-center">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <p>More than</p>
+                                        <div class="display-3" id="religion-2"></div>
+                                        <p>Churches and Mosques greened</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <div class="display-3">82883</div>
-                                        <p>th is is</p>
+                                        <p>More than</p>
+                                        <div class="display-3" id="religion-3"></div>
+                                        <p>participants in peer learning sessions</p>
                                     </div>
                                 </div>
                             </div>
