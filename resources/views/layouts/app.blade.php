@@ -6,6 +6,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- fav-icon -->
+        <link rel="icon" href="/images/mti-favicon.ico" type="image/x-icon">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
