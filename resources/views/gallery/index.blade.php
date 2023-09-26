@@ -29,6 +29,9 @@
                                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                             <tr>
                                                 <th scope="col" class="px-6 py-3 lg:w-1/4">
+                                                    {{__('ID')}}
+                                                </th>
+                                                <th scope="col" class="px-6 py-3 lg:w-1/4">
                                                     {{__('Title')}}
                                                 </th>
                                                 <th scope="col" class="px-6 py-3 lg:w-1/4">
@@ -48,6 +51,9 @@
                                         <tbody>
                                             @forelse ($galleries as $gallery)
                                                 <tr class="bg-white border-b dark:bg-gray-300 dark:border-gray-300">
+                                                    <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
+                                                        {{ $gallery->id }}
+                                                    </td>
                                                     <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
                                                         {{ $gallery->title }}
                                                     </td>
