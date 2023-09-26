@@ -6,6 +6,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\FriendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,9 @@ use App\Http\Controllers\LandingPageController;
 
 //landing page routes
 Route::get("/",[LandingPageController::class,'welcomePage'])->name('landing.index');
-Route::get("/friends",[LandingPageController::class,'friendsPage'])->name('landing.friends');
+Route::get("/friends/{name}",[LandingPageController::class,'friendsPage'])->name('landing.friends');
 Route::get("/about",[LandingPageController::class,'aboutUsPage'])->name('landing.about');
+
 //landing page routes
 
 Route::get('/payment/modes', [PaymentController::class, 'indexPay'])->name('payment.modes');
@@ -41,6 +43,7 @@ Route::middleware([
 
     Route::resource('resource', ResourceController::class);
     Route::resource('gallery', GalleryController::class);
+    Route::resource('friend', FriendController::class);
 
     //non resources
     Route::get('/users/crud/index', [UserController::class, 'userIndex'])->name('users.index');

@@ -23,7 +23,7 @@
         >
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route("landing.index")}}">Back</a>
+                    <a class="nav-link" href="{{route('landing.index')}}">Back</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact Us</a>
