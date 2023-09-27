@@ -9,9 +9,7 @@ class UserController extends Controller
 {
     public function userIndex()
     {
-        $users = User::whereNot('deleted', 1)->get();
-        $number_of_users = $users->count();
-        return view('users.index', compact('users','number_of_users'));
+        return view('users.index');
     }
 
     public function userDestroy(Request $request)
@@ -25,5 +23,5 @@ class UserController extends Controller
     {
         return view('users.account');
     }
-    
+
 }
