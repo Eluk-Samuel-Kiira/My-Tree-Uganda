@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\FriendController;
+use App\Http\Controllers\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ use App\Http\Controllers\FriendController;
 Route::get("/",[LandingPageController::class,'welcomePage'])->name('landing.index');
 Route::get("/friends/{name}",[LandingPageController::class,'friendsPage'])->name('landing.friends');
 Route::get("/about",[LandingPageController::class,'aboutUsPage'])->name('landing.about');
+Route::post("/contact-form",[LandingPageController::class,'contactInfomation'])->name('contact.store');
 
 //landing page routes
 
@@ -44,6 +46,7 @@ Route::middleware([
     Route::resource('resource', ResourceController::class);
     Route::resource('gallery', GalleryController::class);
     Route::resource('friend', FriendController::class);
+    Route::resource('team', TeamController::class);
 
     //non resources
     Route::get('/users/crud/index', [UserController::class, 'userIndex'])->name('users.index');

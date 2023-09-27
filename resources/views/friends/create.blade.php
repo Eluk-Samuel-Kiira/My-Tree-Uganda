@@ -25,14 +25,14 @@
 
                         <div>
                             <x-label for="message" value="{{ __('Message') }}" />
-                            <textarea id="editor" class="block mt-1 w-full" name="message" required></textarea>
+                            <textarea id="message" class="block mt-1 w-full" name="message"></textarea>
                         </div>
                         <script>
                             ClassicEditor
-                                .create( document.querySelector( '#editor' ) )
+                                .create( document.querySelector( '#message' ) )
                                 .catch( error => {
                                     console.error( error );
-                                } );
+                                });
                         </script>
 
                         <div class="mt-4">

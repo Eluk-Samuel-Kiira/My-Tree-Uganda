@@ -26,7 +26,7 @@
 
                         <div>
                             <x-label for="message" value="{{ __('Message') }}" />
-                            <textarea id="editor" class="block mt-1 w-full" name="message" required autofocus autocomplete="message">{!! $friend->message !!}</textarea>
+                            <textarea id="editor" class="block mt-1 w-full" name="message">{!! $friend->message !!}</textarea>
                         </div>
                         <script>
                             ClassicEditor
