@@ -15,8 +15,7 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $galleries = Gallery::whereNot('deleted', 1)->get();
-        return view('gallery.index', compact('galleries'));
+        return view('gallery.index');
     }
 
     /**
