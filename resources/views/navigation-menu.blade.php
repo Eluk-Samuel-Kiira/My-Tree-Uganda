@@ -37,6 +37,11 @@
                             {{ __('Friends') }}
                         </x-nav-link>
                     </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link href="{{ route('team.index') }}" :active="request()->routeIs('team.index')">
+                            {{ __('Team') }}
+                        </x-nav-link>
+                    </div>
                 @endif
             </div>
 
@@ -182,6 +187,11 @@
             <div class="pt-2 pb-3 space-y-1">
                 <x-responsive-nav-link href="{{ route('friend.index') }}" :active="request()->routeIs('friend.index')">
                     {{ __('Friends') }}
+                </x-responsive-nav-link>
+            </div>
+            <div class="pt-2 pb-3 space-y-1">
+                <x-responsive-nav-link href="{{ route('team.index') }}" :active="request()->routeIs('team.index')">
+                    {{ __('Team') }}
                 </x-responsive-nav-link>
             </div>
         @endif

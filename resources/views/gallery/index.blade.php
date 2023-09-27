@@ -4,8 +4,5 @@
             {{ __('Portfolio') }}
         </h2>
     </x-slot>
-
     @livewire("gallary-component")
-
-
 </x-app-layout>

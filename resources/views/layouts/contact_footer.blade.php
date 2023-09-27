@@ -32,20 +32,44 @@
             </div>
             <div class="col-sm-12 col-lg-6">
                 <div class="right">
+                    <div class="rounded-lg max-w-xm">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        @if(session('status'))
+                            <p class="block w-full pl-3 pr-4 py-2 border-l-4 border-indigo-400 text-left text-base font-medium text-indigo-700 bg-indigo-50 focus:outline-none focus:text-indigo-800 focus:bg-indigo-100 focus:border-indigo-700 transition duration-150 ease-in-out">
+                                {{ session('status') }}
+                            </p>
+                        @endif
+                    </div>
                     <i class="fa fa-caret-left"></i>
-                    <form>
+                    <form method="POST" action="{{ route('contact.store') }}">
+                        @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Your Name</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Message</label>
-                            <textarea type="password" class="form-control" id="exampleInputPassword1"></textarea>
+                            <label for="message" class="form-label">Message</label>
+                            <textarea type="text" class="form-control" id="message" name="message"></textarea>
                         </div>
+                        <script>
+                            ClassicEditor
+                                .create( document.querySelector( '#message' ) )
+                                .catch( error => {
+                                    console.error( error );
+                                });
+                        </script>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
@@ -63,7 +87,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <a href="{{route("landing.index")}}">
+                <a href="{{route('landing.index')}}">
                     <img src="/images/logo2.png" alt="" style="width: 180px;" class="mb-3">
                 </a>
                 <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
@@ -248,6 +272,5 @@
     observeSchoolsTab();
 
 </script>
-
 </body>
 </html>
