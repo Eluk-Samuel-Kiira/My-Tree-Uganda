@@ -15,8 +15,7 @@ class ResourceController extends Controller
      */
     public function index()
     {
-        $resources = Resource::whereNot('deleted', 1)->get();
-        return view('resources.index', compact('resources'));
+        return view('resources.index');
     }
 
     /**
@@ -58,7 +57,7 @@ class ResourceController extends Controller
      */
     public function show(Resource $resource)
     {
-        
+
     }
 
     /**
