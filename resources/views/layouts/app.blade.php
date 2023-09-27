@@ -8,7 +8,10 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         <!-- fav-icon -->
         <link rel="icon" href="/images/mti-favicon.ico" type="image/x-icon">
-
+        <script 
+            src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js">
+        </script>
+        
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
@@ -43,5 +46,6 @@
         @stack('modals')
 
         @livewireScripts
+        
     </body>
 </html>

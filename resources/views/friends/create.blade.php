@@ -10,23 +10,22 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
                     <x-validation-errors class="mb-4" />
-                    <form method="POST" action="{{ route('friend.update', $friend) }}" enctype="multipart/form-data" style="width: 60%; margin: 0 auto;">
+                    <form method="POST" action="{{ route('friend.store') }}" enctype="multipart/form-data" style="width: 60%; margin: 0 auto;">
                         @csrf
-                        @method('PUT') 
                         <x-input id="user_id" class="block mt-1 w-full" type="hidden" name="user_id" value="{{(Auth::user()->id)}}" />
                         <div>
                             <x-label for="name" value="{{ __('Full Name') }}" />
-                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ $friend->name }}" required autofocus autocomplete="name" />
+                            <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                         </div>
 
                         <div>
                             <x-label for="title" value="{{ __('Title') }}" />
-                            <x-input id="title" class="block mt-1 w-full" type="text" name="title" value="{{ $friend->title }}" required autofocus autocomplete="title" />
+                            <x-input id="title" class="block mt-1 w-full" type="text" name="title" :value="old('title')" required autofocus autocomplete="title" />
                         </div>
 
                         <div>
                             <x-label for="message" value="{{ __('Message') }}" />
-                            <textarea id="editor" class="block mt-1 w-full" name="message" required autofocus autocomplete="message">{!! $friend->message !!}</textarea>
+                            <textarea id="editor" class="block mt-1 w-full" name="message" required></textarea>
                         </div>
                         <script>
                             ClassicEditor

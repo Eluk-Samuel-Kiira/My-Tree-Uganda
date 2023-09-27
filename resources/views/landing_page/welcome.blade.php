@@ -10,9 +10,7 @@
                 <div class="col-12">
                     <div class="float-md-start">
 
-                        <h1
-                            class="display-2 my-10-increased text-start text-white"
-                        >
+                        <h1 class="display-2 my-10-increased text-start text-white">
                             Friends of My Tree Donors Group
                         </h1>
                         <p class="text-white fw-bold my-3">
@@ -24,121 +22,32 @@
                             Join us today and make a lasting impact while enjoying the rewards of being a Friend of My Tree.
                         </p>
                         <div class="row my-3">
-                            <div class="col-sm-3 mb-3 mb-sm-0">
-                                <div class="card card-transparent">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center text-white">
-                                            <div class="flex-shrink-0">
-                                                <img src="/images/friend1.png"
-                                                     alt="Generic placeholder image" class="img-fluid"
-                                                     style="width: 100px; height: 100px; border-radius: 50%; background: white;">
-                                            </div>
-                                            <div class="flex-grow-0 ms-3">
-                                                <h5 class="mb-1">Dr. Karusa Kiragu</h5>
-                                                <p class="mb-2 pb-1">Director of Change Management at the UNAIDS</p>
-                                                <a href="{{route('landing.friends')}}" class="btn btn-brand btn-brand-2 my-1">Read More</a>
-
-                                            </div>
-                                        </div>
-                                        <!--                        <div class="d-flex justify-content-start rounded-3 p-2 mb-2">-->
-                                        <!--                          <div>-->
-                                        <!--                            <p class="mb-0">-->
-                                        <!--                              he backbone of My Tree initiative and the cornerstone of My Tree donor history.-->
-                                        <!--                              Her unwavering commitment to our cause has made her-->
-                                        <!--                            </p>-->
-                                        <!--                          </div>-->
-                                        <!--                        </div>-->
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 mb-3">
-                                <div class="card card-transparent">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center text-white">
-                                            <div class="flex-shrink-0">
-                                                <img src="/images/friend2.png"
-                                                     alt="Generic placeholder image" class="img-fluid"
-                                                     style="width: 100px;height: 100px; border-radius: 50%; background: white;">
-                                            </div>
-                                            <div class="flex-grow-0 ms-3">
-                                                <h5 class="mb-1">Gen. Katumba Wamala</h5>
-                                                <p class="mb-2 pb-1">Minister of Works & Transport</p>
-                                                <a href="{{route('landing.friends')}}" class="btn btn-brand btn-brand-2 my-1">Read More</a>
+                            @forelse ($friends as $friend)
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <div class="card card-transparent" style="height: 320px">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center text-white">
+                                                <div class="flex-shrink-0">
+                                                    <img src="{{ asset('storage/Friends')}}/{{$friend->image }}"
+                                                        alt="Generic placeholder image" class="img-fluid"
+                                                        style="width: 100px; height: 100px; border-radius: 50%; background: white;">
+                                                </div>
+                                                <div class="flex-grow-0 ms-3">
+                                                    <h5 class="mb-1">{{ $friend->name }}</h5>
+                                                    <p class="mb-2 pb-1">{{ $friend->title }}</p>
+                                                    <a href="{{route('landing.friends', $friend->name)}}" class="btn btn-brand btn-brand-2 my-1">Read More</a>
+                                                </div>
                                             </div>
                                         </div>
-                                        <!--                        <div class="d-flex justify-content-start rounded-3 p-2">-->
-                                        <!--                          <div>-->
-                                        <!--                            <p>-->
-                                        <!--                              Stands as the unwavering champion of My Tree Initiative,-->
-                                        <!--                              with a donation history that reflects his profound commitment to our cause.-->
-                                        <!--                            </p>-->
-                                        <!--                          </div>-->
-                                        <!--                        </div>-->
-
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-sm-3 mb-3">
-                                <div class="card card-transparent">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center text-white">
-                                            <div class="flex-shrink-0">
-                                                <img src="/images/friend3.png"
-                                                     alt="Generic placeholder image" class="img-fluid"
-                                                     style="width: 100px; height: 100px; border-radius: 50%; background: white;">
-                                            </div>
-                                            <div class="flex-grow-0 ms-3">
-                                                <h5 class="mb-1">Prof. Maggie Kigozi</h5>
-                                                <p class="mb-2 pb-1">Director Zuri Model Farm</p>
-                                                <a href="{{route('landing.friends')}}" class="btn btn-brand btn-brand-2 my-1">Read More</a>
-                                            </div>
-                                        </div>
-                                        <!--                        <div class="d-flex justify-content-start rounded-3 p-2 mb-2">-->
-                                        <!--                          <div>-->
-                                        <!--                            <p class="mb-0">-->
-                                        <!--                              , the public face and shining star of My Tree-->
-                                        <!--                              Initiative, has not only been our biggest promoter but also a-->
-                                        <!--                            </p>-->
-                                        <!--                          </div>-->
-                                        <!--                        </div>-->
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 mb-3">
-                                <div class="card card-transparent">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center text-white">
-                                            <div class="flex-shrink-0">
-                                                <img src="/images/friend4.png"
-                                                     alt="Generic placeholder image" class="img-fluid"
-                                                     style="width: 100px; height: 100px; border-radius: 50%; background: white;">
-                                            </div>
-                                            <div class="flex-grow-0 ms-3">
-                                                <h5 class="mb-1">Dr. Antonio Querido</h5>
-                                                <p class="mb-2 pb-1">Country Director FAO Uganda</p>
-                                                <a href="{{route('landing.friends')}}" class="btn btn-brand btn-brand-2 my-1">Read More</a>
-                                            </div>
-                                        </div>
-                                        <!--                        <div class="d-flex justify-content-start rounded-3 p-2">-->
-                                        <!--                          <div>-->
-                                        <!--                            <p class="mb-0">-->
-                                        <!--                              Dr. Antonio Querido's contribution to My Tree Initiative extends far beyond gghhgh ggg-->
-                                        <!--                            </p>-->
-
-                                        <!--                            <a href="#" class="btn btn-brand btn-brand-2 my-1">Read More</a>-->
-                                        <!--                          </div>-->
-
-                                        <!--                        </div>-->
-
-                                    </div>
-                                </div>
-                            </div>
+                            @empty
+                                <p class="mb-2 pb-1">No Friend Available</p>
+                            @endforelse
                         </div>
-                        <div class="float-sm-start mb-3">
-                            <a href="#" class="btn btn-brand p-3">Become a Member</a>
-                        </div>
+                            <div class="float-sm-start mb-3">
+                                <a href="#" class="btn btn-brand p-3">Become a Member</a>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -547,184 +456,39 @@
     <div class="container">
         <div class="row">
             <div class="col-12 intro text-center">
-                <h1 style="margin-top: 20px;">Project Gallary</h1>
+                <h1 style="margin-top: 20px;">Project Gallery/Portfolio</h1>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
-                    ipsa rerum atque quaerat ullam ad eos, sit perferendis sapiente
-                    ducimus voluptatibus tempore sunt autem repellat?
+                    As a team, we belief planing trees are fundamental to life
+                    in different aspects such as breathing in clean air, cooling the 
+                    planet, carbon capture, reduce the effects of floods etc. We are thrilled
+                    to share with you some of our photos.
                 </p>
             </div>
         </div>
         <div class="row">
             <!-- team 1 -->
-            <div class="col-lg-3 mb-2">
-                <div class="team-member">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                            alt="team1"
-                        />
-                        <div class="overlay"></div>
-                        <div class="team-social-links">
-                            <div class="card" style="width: 19.5rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            @forelse ($galleries as $gallery)
+                <div class="col-lg-3 mb-2">
+                    <div class="team-member">
+                        <div class="img-wrapper">
+                            <img src="{{ asset('storage/Gallery')}}/{{$gallery->image }}" alt="photo" style="height: 200px"/>
+                            <div class="overlay"></div>
+                            <div class="team-social-links">
+                                <div class="card" style="width: 19.5rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $gallery->title }}</h5>
+                                        <p class="card-text">{{ $gallery->description }}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- team 2 -->
-            <div class="col-lg-3 mb-2">
-                <div class="team-member">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://images.pexels.com/photos/4226462/pexels-photo-4226462.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                            alt="team1"
-                        />
-                        <div class="overlay"></div>
-                        <div class="team-social-links">
-                            <div class="card" style="width: 19.5rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            @empty
+                <div class="card-body">
+                    <p class="card-text">No Photos are Available.</p>
                 </div>
-            </div>
-            <!-- team 3 -->
-            <div class="col-lg-3 mb-2">
-                <div class="team-member">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                            alt="team1"
-                        />
-                        <div class="overlay"></div>
-                        <div class="team-social-links">
-                            <div class="card" style="width: 19.5rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- team 4 -->
-            <div class="col-lg-3 mb-2">
-                <div class="team-member">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://images.pexels.com/photos/4226462/pexels-photo-4226462.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                            alt="team1"
-                        />
-                        <div class="overlay"></div>
-                        <div class="team-social-links">
-                            <div class="card" style="width: 19.5rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- team 5 -->
-            <div class="col-lg-3 mb-2">
-                <div class="team-member">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                            alt="team1"
-                        />
-                        <div class="overlay"></div>
-                        <div class="team-social-links">
-                            <div class="card" style="width: 19.5rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- team 6 -->
-            <div class="col-lg-3 mb-2">
-                <div class="team-member">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://images.pexels.com/photos/4226462/pexels-photo-4226462.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                            alt="team1"
-                        />
-                        <div class="overlay"></div>
-                        <div class="team-social-links">
-                            <div class="card" style="width: 19.5rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- team 7 -->
-            <div class="col-lg-3 mb-2">
-                <div class="team-member">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://images.pexels.com/photos/834863/pexels-photo-834863.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                            alt="team1"
-                        />
-                        <div class="overlay"></div>
-                        <div class="team-social-links">
-                            <div class="card" style="width: 19.5rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- team 8 -->
-            <div class="col-lg-3 mb-2">
-                <div class="team-member">
-                    <div class="img-wrapper">
-                        <img
-                            src="https://images.pexels.com/photos/4226462/pexels-photo-4226462.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                            alt="team1"
-                        />
-                        <div class="overlay"></div>
-                        <div class="team-social-links">
-                            <div class="card" style="width: 19.5rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- team end -->
+            @endforelse
         </div>
     </div>
 </section>

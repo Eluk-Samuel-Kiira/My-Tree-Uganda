@@ -97,7 +97,7 @@
                             <div class="accordion-body">
                                 <a href="#">Donate</a><br>
                                 <a href="#">Become a Member</a><br>
-                                <a href="{{route('landing.friends')}}">Friends of My Tree Donors Group</a><br>
+                                <a href="/">Friends of My Tree Donors Group</a><br>
                                 <a href="{{route('landing.about')}}">Who we Are?</a>
                             </div>
                         </div>
