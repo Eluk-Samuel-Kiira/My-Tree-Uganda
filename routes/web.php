@@ -22,7 +22,7 @@ use App\Http\Controllers\TeamController;
 
 //landing page routes
 Route::get("/",[LandingPageController::class,'welcomePage'])->name('landing.index');
-Route::get("/friends/{name}",[LandingPageController::class,'friendsPage'])->name('landing.friends');
+Route::get("/friends",[LandingPageController::class,'friendsPage'])->name('landing.friends');
 Route::get("/about",[LandingPageController::class,'aboutUsPage'])->name('landing.about');
 Route::post("/contact-form",[LandingPageController::class,'contactInfomation'])->name('contact.store');
 

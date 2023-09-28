@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Add a New Friend') }}
+            {{ __('Edit a Friend') }}
         </h2>
     </x-slot>
 
@@ -12,7 +12,7 @@
                     <x-validation-errors class="mb-4" />
                     <form method="POST" action="{{ route('friend.update', $friend) }}" enctype="multipart/form-data" style="width: 60%; margin: 0 auto;">
                         @csrf
-                        @method('PUT') 
+                        @method('PUT')
                         <x-input id="user_id" class="block mt-1 w-full" type="hidden" name="user_id" value="{{(Auth::user()->id)}}" />
                         <div>
                             <x-label for="name" value="{{ __('Full Name') }}" />
@@ -39,7 +39,7 @@
                         <div class="mt-4">
                             <x-label for="image" value="{{ __('Upload Image') }}" />
                             <img id="image_frame" alt="" width="100" height="100" />
-                            <x-input class="form-control" id="image" type="file" name="image" 
+                            <x-input class="form-control" id="image" type="file" name="image"
                                 onchange="document.getElementById('image_frame').src = window.URL.createObjectURL(this.files[0])"/>
                         </div>
 

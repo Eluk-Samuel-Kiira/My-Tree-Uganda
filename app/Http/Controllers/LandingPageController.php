@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Models\Friend;
@@ -14,16 +15,17 @@ class LandingPageController extends Controller
 {
     public function welcomePage(){
         $galleries = Gallery::whereNot('deleted', 1)->latest()->take(8)->get();
-        $friends = Friend::whereNot('deleted', 1)->latest()->take(8)->get();
-        return view("landing_page.welcome", compact('galleries','friends'));
+        $friends = Friend::where('deleted','!=', 1)->latest()->take(4)->get();
+        $team = Team::where('deleted','!=',1)->latest()->take(4)->get();
+        return view("landing_page.welcome", compact('galleries','friends','team'));
     }
     public function aboutUsPage(){
         return view("landing_page.about");
     }
     public function friendsPage(Request $request)
     {
-        $one_friend = Friend::whereNot('deleted', 1)->where('name', $request->name)->first();
-        return view("landing_page.friends", compact('one_friend'));
+        $friends = Friend::where('deleted','!=', 1)->paginate(1);
+        return view("landing_page.friends", compact('friends'));
     }
 
     public function contactInfomation(Request $request)
@@ -34,22 +36,22 @@ class LandingPageController extends Controller
             'email' => 'required|email|max:255',
             'message' => 'required|string|max:2000',
         ];
-    
+
         // Create a validator instance
         $validator = Validator::make($request->all(), $rules);
-    
+
         // Check if validation fails
         if ($validator->fails()) {
             return redirect()->to('/#contact')->withErrors($validator)->withInput();
         }
-    
+
         // Validation passed, save the contact
         $contact = new Contact();
         $contact->name = $request->name;
         $contact->email = $request->email;
         $contact->message = $request->message;
         $contact->save();
-        
+
         // Call the email functionality
         $emailData = [
             'name' => $request->name,

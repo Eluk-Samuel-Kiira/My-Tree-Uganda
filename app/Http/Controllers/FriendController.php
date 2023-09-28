@@ -16,8 +16,7 @@ class FriendController extends Controller
      */
     public function index()
     {
-        $friends = Friend::whereNot('deleted', 1)->latest()->get();
-        return view('friends.index', compact('friends'));
+        return view('friends.index');
     }
 
     /**
@@ -104,6 +103,7 @@ class FriendController extends Controller
         $friend->name = $request->input('name');
         $friend->title = $request->input('title');
         $friend->message = $request->input('message');
+        $friend->update();
         return redirect()->route('friend.index')->with('status', 'The Friend\'s  Details Has Been Updated Successfully');
     }
 

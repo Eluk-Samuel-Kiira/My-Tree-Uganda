@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'My Tree Initiative') }}</title>
-        <!-- fav-icon -->
-        <link rel="icon" href="/images/mti-favicon.ico" type="image/x-icon">
-        <script 
-            src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js">
-        </script>
-        
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title>{{ config('app.name', 'My Tree Initiative') }}</title>
+    <!-- fav-icon -->
+    <link rel="icon" href="/images/mti-favicon.ico" type="image/x-icon">
+    <script
+        src="https://cdn.ckeditor.com/ckeditor5/36.0.0/classic/ckeditor.js">
+    </script>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-        <!-- Styles -->
-        @livewireStyles
-    </head>
-    <body class="font-sans antialiased">
-        <x-banner />
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+    <!-- Styles -->
+    @livewireStyles
+</head>
+<body class="font-sans antialiased">
+<x-banner />
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+<div class="min-h-screen bg-gray-100">
+    @livewire('navigation-menu')
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div>
+    <!-- Page Heading -->
+    @if (isset($header))
+        <header class="bg-white shadow">
+            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                {{ $header }}
+            </div>
+        </header>
+    @endif
 
-        @stack('modals')
+    <!-- Page Content -->
+    <main>
+        {{ $slot }}
+    </main>
+</div>
 
-        @livewireScripts
-        
-    </body>
+@stack('modals')
+
+@livewireScripts
+
+</body>
 </html>

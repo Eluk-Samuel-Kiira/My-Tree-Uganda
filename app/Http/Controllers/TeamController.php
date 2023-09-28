@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Team;
 use App\Http\Requests\StoreTeamRequest;
 use App\Http\Requests\UpdateTeamRequest;
+use File;
 
 class TeamController extends Controller
 {
@@ -15,7 +16,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        return view('team.index');
     }
 
     /**
@@ -25,7 +26,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('team.create');
     }
 
     /**
@@ -36,7 +37,26 @@ class TeamController extends Controller
      */
     public function store(StoreTeamRequest $request)
     {
-        //
+        $team = new Team();
+        $file = $request->file('image');
+        if($file != null) {
+            $fileName = time().'.'.$file->extension();
+            $file->move(storage_path('app/public/Team'),$fileName);
+            $team->image = $fileName;
+        }
+        $team->name = $request->name;
+        $team->title = $request->title;
+        if($request->facebook){
+            $team->facebook = $request->facebook;
+        }
+        if($request->twitter){
+            $team->twitter = $request->twitter;
+        }
+        if($request->instagram){
+            $team->instagram = $request->instagram;
+        }
+        $team->save();
+        return redirect()->route('team.index')->with('status', 'New Team member Has Been Added Successfully');
     }
 
     /**
@@ -47,7 +67,8 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        //
+        $team->update(['deleted' => 1]);
+        return redirect()->back()->with('status', 'The Member\'s Details Has Been Deleted Successfully');
     }
 
     /**
@@ -58,7 +79,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        //
+        return view('team.edit', compact('team'));
     }
 
     /**
@@ -70,7 +91,36 @@ class TeamController extends Controller
      */
     public function update(UpdateTeamRequest $request, Team $team)
     {
-        //
+        $file = $request->file('image');
+        if($file != null) {
+            //first delete the previous image stored if image is not null
+            $fileloc1 = 'app/public/Team/'.$team->image;
+            $filename1 = storage_path($fileloc1);
+            if(File::exists($filename1)) {
+                File::delete($filename1);
+            }
+            //Then store the current
+            $fileName = time().'.'.$file->extension();
+            $file->move(storage_path('app/public/Team'),$fileName);
+            //$friend->image = $fileName;
+            //Update Image name
+            $team->update(['image' => $fileName]);
+        }
+
+        $team->name = $request->input('name');
+        $team->title = $request->input('title');
+
+        if($request->facebook){
+            $team->facebook = $request->input('facebook');
+        }
+        if($request->twitter){
+            $team->twitter = $request->input('twitter');
+        }
+        if($request->instagram){
+            $team->instagram = $request->input('instagram');
+        }
+        $team->update();
+        return redirect()->route('team.index')->with('status', 'The Member\'s  Details Has Been Updated Successfully');
     }
 
     /**
