@@ -10,20 +10,6 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 @php
                     $tx_ref = uniqid();
-                    $user_id = Auth::user()->id;
-                    // Extract the payment amount from the form
-                    $amount = 1000000; // Default amount, you can customize this
-
-                    if (request()->has('amount')) {
-                        $amount = request('amount');
-                    }
-
-                    // Create a new record in the transactions table
-                    \App\Models\Transaction::create([
-                        'user_id' => $user_id,
-                        'tx_ref' => $tx_ref,
-                        'amount' => $amount,
-                    ]);
                 @endphp
                 @if($pay_option == 'mtn_momo')
                     <div class="flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
@@ -33,13 +19,14 @@
                         </div>
                         <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" style="width: 60%; margin: 0 auto;">
                             @csrf
-                            <x-input class="block mt-1 w-full" type="text" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
-                            <x-input class="block mt-1 w-full" type="text" name="tx_ref" value="{{ $tx_ref }}" />
-                            <x-input class="block mt-1 w-full" type="text" name="currency" value="UGX" />
-                            <x-input class="block mt-1 w-full" type="text" name="amount" value="10000" />
-                            <x-input class="block mt-1 w-full" type="text" name="meta[token]" value="54" />
-                            <x-input class="block mt-1 w-full" type="text" name="payment_options" value="mobilemoneyuganda" />
-                            <x-input class="block mt-1 w-full" type="text" name="redirect_url" value="https://google.com" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="tx_ref" value="{{ $tx_ref }}" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="currency" value="UGX" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="amount" value="1000000" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="network" value="MTN" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="meta[token]" value="54" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="payment_options" value="mobilemoneyuganda" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="redirect_url" value="https://mytreeuganda.org/payment/status" />
                             <div>
                                 <x-label for="name" value="{{ __('Full Name') }}" />
                                 <x-input id="name" class="block mt-1 w-full" type="text" name="customer[name]" value="{{(Auth::user()->name)}}" required />
@@ -70,13 +57,14 @@
                         </div>
                         <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" style="width: 60%; margin: 0 auto;">
                             @csrf
-                            <x-input class="block mt-1 w-full" type="text" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
-                            <x-input class="block mt-1 w-full" type="text" name="tx_ref" value="{{ $tx_ref }}" />
-                            <x-input class="block mt-1 w-full" type="text" name="currency" value="UGX" />
-                            <x-input class="block mt-1 w-full" type="text" name="amount" value="10000" />
-                            <x-input class="block mt-1 w-full" type="text" name="meta[token]" value="54" />
-                            <x-input class="block mt-1 w-full" type="text" name="payment_options" value="mobilemoneyuganda" />
-                            <x-input class="block mt-1 w-full" type="text" name="redirect_url" value="https://google.com" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="tx_ref" value="{{ $tx_ref }}" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="currency" value="UGX" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="amount" value="1000000" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="network" value="AIRTEL" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="meta[token]" value="54" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="payment_options" value="mobilemoneyuganda" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="redirect_url" value="https://mytreeuganda.org/payment/status" />
                             <div>
                                 <x-label for="name" value="{{ __('Full Name') }}" />
                                 <x-input id="name" class="block mt-1 w-full" type="text" name="customer[name]" value="{{(Auth::user()->name)}}" required />
@@ -107,33 +95,30 @@
                         </div>
                         <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" style="width: 60%; margin: 0 auto;">
                             @csrf
-                            <x-input class="block mt-1 w-full" type="text" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
-                            <x-input class="block mt-1 w-full" type="text" name="tx_ref" value="{{ $tx_ref }}" />
-                            <x-input class="block mt-1 w-full" type="text" name="currency" value="UGX" />
-                            <x-input class="block mt-1 w-full" type="text" name="meta[token]" value="54" />
-                            <x-input class="block mt-1 w-full" type="text" name="payment_options" value="mobilemoneyuganda" />
-                            <x-input class="block mt-1 w-full" type="text" name="redirect_url" value="https://google.com" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="tx_ref" value="{{ $tx_ref }}" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="currency" value="USD" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="meta[token]" value="54" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="payment_options" value="card" />
+                            <x-input class="block mt-1 w-full" type="hidden" name="redirect_url" value="https://mytreeuganda.org/payment/status" />
 
                             <div>
                                 <x-label for="amount" value="{{ __('Select Amount') }}" />
                                 <div>
-                                    <x-input id="amount1" type="checkbox" name="amount" value="50000" />
-                                    <label for="amount1">50,000 UGX/year for Basic(Friends of My Tree Initiative)</label><br>
+                                    <x-input id="amount1" type="checkbox" name="amount" value="266" />
+                                    <label for="amount1">1,000,000 UGX/year for Basic (USD 266)</label><br>
 
-                                    <x-input id="amount1" type="checkbox" name="amount" value="1000000" />
-                                    <label for="amount1">1,000,000 UGX/year for Basic(Friends of My Tree Initiative)</label><br>
+                                    <x-input id="amount2" type="checkbox" name="amount" value="26567" />
+                                    <label for="amount2">10,000,000 UGX/year  for Bronze (USD 26567)</label><br>
 
-                                    <x-input id="amount2" type="checkbox" name="amount" value="10000000" />
-                                    <label for="amount2">10,000,000 UGX/year  for Bronze</label><br>
+                                    <x-input id="amount3" type="checkbox" name="amount" value="13284" />
+                                    <label for="amount3">50,000,000 UGX/year  for Silver (USD 13284)</label><br>
 
-                                    <x-input id="amount3" type="checkbox" name="amount" value="50000000" />
-                                    <label for="amount3">50,000,000 UGX/year  for Silver</label><br>
+                                    <x-input id="amount4" type="checkbox" name="amount" value="26566" />
+                                    <label for="amount4">100,000,000 UGX/year  for Gold (USD 26566)</label><br>
 
-                                    <x-input id="amount4" type="checkbox" name="amount" value="100000000" />
-                                    <label for="amount4">100,000,000 UGX/year  for Gold</label><br>
-
-                                    <x-input id="amount5" type="checkbox" name="amount" value="200000000" />
-                                    <label for="amount5">200,000,000 UGX/year  for Platinum</label><br>
+                                    <x-input id="amount5" type="checkbox" name="amount" value="53130" />
+                                    <label for="amount5">200,000,000 UGX/year  for Platinum (USD 53130)</label><br>
                                 </div>
                             </div>
 
@@ -161,6 +146,16 @@
                     </div>
                 @endif
             </div>
+            @php
+                $user_id = Auth::user()->id;
+
+                // Create a new record in the transactions table
+                \App\Models\Transaction::create([
+                    'user_id' => $user_id,
+                    'tx_ref' => $tx_ref,
+                    'amount' => '1000000'
+                ]);
+            @endphp
         </div>
     </div>
 </x-app-layout>
