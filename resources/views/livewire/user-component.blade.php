@@ -25,6 +25,9 @@
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
+                                <th scope="col" class="px-2 py-3 lg:w-1/4">
+                                    {{__('#')}}
+                                </th>
                                 <th scope="col" class="px-6 py-3 lg:w-1/4">
                                     {{__('Name')}}
                                 </th>
@@ -45,6 +48,9 @@
                             <tbody>
                             @forelse ($users as $user)
                                 <tr class="bg-white border-b dark:bg-gray-300 dark:border-gray-300">
+                                    <td class="px-2 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
+                                        {{ $user->id }}
+                                    </td>
                                     <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
                                         {{ $user->name }}
                                     </td>
@@ -56,13 +62,17 @@
                                     </td>
                                     <td class="px-4 py-0 font-medium text-white-900 white:text-white whitespace-nowrap">
                                         @if($user->status == 1)
-                                            <span class="bg-gray-200 rounded-md px-4 py-2">
-                                                        {{ __('Paid') }}
-                                                    </span>
+                                            <span class="bg-indigo-800 rounded-md px-4 py-2">
+                                                <a href="{{ route('user.paid', $user->id) }}">
+                                                    {{ __('Paid') }}
+                                                </a>
+                                            </span>
                                         @elseif($user->status == 0)
-                                            <span class="bg-gray-500 rounded-md px-4 py-2">
+                                            <span class="bg-gray-200 rounded-md px-4 py-2">
+                                                <a href="{{ route('user.paid', $user->id) }}">
                                                         {{ __('Unpaid') }}
-                                                    </span>
+                                                </a>
+                                            </span>
                                         @endif
                                     </td>
                                     <td class="px-4 py-0">

@@ -10,16 +10,16 @@ use Illuminate\Notifications\Notification;
 class ContactMail extends Notification
 {
     use Queueable;
-    private $contactDetails;
+    private $sendNewsletter;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($contactDetails)
+    public function __construct($sendNewsletter)
     {
-        $this->contactDetails = $contactDetails;
+        $this->sendNewsletter = $sendNewsletter;
     }
 
     /**
@@ -42,9 +42,7 @@ class ContactMail extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line($this->contactDetails['body'])
-                    ->action($this->contactDetails['name'], $this->contactDetails['url'])
-                    ->line($this->contactDetails['thanks']);
+            ->view('emails.newsletter', ['sendNewsletter' => $this->sendNewsletter]);
     }
 
     /**
