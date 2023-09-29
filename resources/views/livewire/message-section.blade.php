@@ -48,7 +48,7 @@
                                                         </div>
                                                     @endif
                                                 </div>
-                                                <div class="relative mr-3">
+                                                <div class="relative mr-3 max-w-fit whitespace-normal">
                                                     <div
                                                         class="text-sm bg-indigo-100 py-2 px-4 shadow rounded-xl"
                                                     >
@@ -97,7 +97,7 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <div class="relative ml-3">
+                                            <div class="relative ml-3 max-w-fit whitespace-normal">
                                                 <div
                                                     class="text-sm bg-white py-2 px-4 shadow rounded-xl"
                                                 >

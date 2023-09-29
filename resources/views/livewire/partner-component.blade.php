@@ -1,5 +1,4 @@
 <div>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -15,14 +14,14 @@
                             </div>
                             <div class="flex justify-between">
                                 <div>
-                                    <a href="{{ route('gallery.create') }}" class="inline-flex items-center px-4 py-2 font-semibold text-xs text-white uppercase transition ease-in-out">
-                                <span class="bg-gray-800 rounded-md px-4 py-2">
-                                    {{ __('Add Gallery') }}
-                                </span>
+                                    <a href="{{ route('partner.create') }}" class="inline-flex items-center px-4 py-2 font-semibold text-xs text-white uppercase transition ease-in-out">
+                                        <span class="bg-gray-800 rounded-md px-4 py-2">
+                                            {{ __('Add New Partner') }}
+                                        </span>
                                     </a>
                                 </div>
                                 <div class="mr-4">
-                                    <input wire:model="search" placeholder="Search by gallery title..." class="bg-gray-100 my-2 border-1 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                    <input wire:model="search" placeholder="Search partner by name & category..." class="bg-gray-100 my-2 border-1 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                                 </div>
                             </div>
                             <div class="table-responsive" style="overflow-x: auto;">
@@ -31,19 +30,13 @@
                                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                         <tr>
                                             <th scope="col" class="px-6 py-3 lg:w-1/4">
-                                                {{__('ID')}}
+                                                {{__('Name')}}
                                             </th>
                                             <th scope="col" class="px-6 py-3 lg:w-1/4">
-                                                {{__('Title')}}
-                                            </th>
-                                            <th scope="col" class="px-6 py-3 lg:w-1/4">
-                                                {{__('Description')}}
+                                                {{__('category')}}
                                             </th>
                                             <th scope="col" class="px-6 py-3 lg:w-1/4">
                                                 {{__('Image')}}
-                                            </th>
-                                            <th scope="col" class="px-6 py-3 lg:w-1/4">
-                                                {{__('Author')}}
                                             </th>
                                             <th scope="col" class="px-6 py-3 lg:w-1/4">
                                                 {{__('Actions')}}
@@ -51,53 +44,60 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @forelse ($galleries as $gallery)
+                                        @forelse ($partners as $partner)
                                             <tr class="bg-white border-b dark:bg-gray-300 dark:border-gray-300">
                                                 <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
-                                                    {{ $gallery->id }}
+                                                    {{ $partner->name }}
                                                 </td>
                                                 <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
-                                                    {{ $gallery->title }}
+                                                    {{ $partner->category }}
                                                 </td>
                                                 <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
-                                                    {{ $gallery->description }}
-                                                </td>
-                                                <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
-                                                    <img src="{{ asset('storage/Gallery')}}/{{$gallery->image }}" style="max-width: 100px" />
-                                                </td>
-                                                <td class="px-4 py-0 font-medium text-gray-900 white:text-white whitespace-nowrap">
-                                                    {{ $gallery->poster->name }}
+                                                    <img src="{{ asset('storage/Partners')}}/{{$partner->image }}" style="max-width: 100px" />
                                                 </td>
                                                 <td class="px-4 py-2">
-                                                    <div class="flex items-center justify-start">
+                                                    <div class="flex items-center justify-start space-x-2">
                                                         @if(auth()->user()->role == 'admin')
-                                                            <x-danger-button class="ml-2">
-                                                                <a href="{{ route('gallery.edit', $gallery) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                                                    {{__('Delete')}}
+                                                            <div class="flex-1">
+                                                                <a href="{{ route('partner.edit', $partner) }}" class="font-medium text-indigo-600 indigo:text-indigo-500 hover:underline">
+                                                                    <span class="bg-gray-800 rounded-md px-4 py-2">
+                                                                        {{ __('Edit') }}
+                                                                    </span>
                                                                 </a>
-                                                            </x-danger-button>
+                                                            </div>
+                                                            <div class="flex-1">
+                                                                <x-danger-button class="ml-2">
+                                                                    <a href="{{ route('partner.show', $partner) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                                                                        {{__('Delete')}}
+                                                                    </a>
+                                                                </x-danger-button>
+                                                            </div>
                                                         @endif
                                                     </div>
                                                 </td>
+
                                             </tr>
                                         @empty
                                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                                 <td colspan="2"
                                                     class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                                    {{ __('No Gallery found') }}
+                                                    {{ __('No Partners found') }}
                                                 </td>
                                             </tr>
                                         @endforelse
                                         </tbody>
-
-                                        <div class="my-5">{{$galleries->links()}}</div>
                                     </table>
+                                    <div class="my-5">{{$partners->links()}}</div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
             </div>
+
         </div>
+
     </div>
 </div>

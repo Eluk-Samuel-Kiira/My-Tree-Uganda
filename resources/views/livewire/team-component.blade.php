@@ -104,6 +104,8 @@
                                             </tr>
                                         @endforelse
                                         </tbody>
+
+                                        <div class="my-5">{{$team_all->links()}}</div>
                                     </table>
                                 </div>
                             </div>

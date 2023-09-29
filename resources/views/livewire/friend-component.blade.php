@@ -107,6 +107,8 @@
                                         @endforelse
                                         </tbody>
                                     </table>
+
+                                    <div class="my-5">{{$friends->links()}}</div>
                                 </div>
                             </div>
                         </div>

@@ -96,6 +96,8 @@
                             @endforelse
                             </tbody>
                         </table>
+
+                        <div class="my-5">{{$users->links()}}</div>
                     </div>
                 </div>
             </div>

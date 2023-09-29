@@ -43,6 +43,11 @@
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link href="{{ route('partner.index') }}" :active="request()->routeIs('partner.index')">
+                            {{ __('Partners') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link href="{{ route('news.letters') }}" :active="request()->routeIs('news.letters')">
                             {{ __('News Letters') }}
                         </x-nav-link>

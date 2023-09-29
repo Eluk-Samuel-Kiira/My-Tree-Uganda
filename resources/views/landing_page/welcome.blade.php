@@ -547,31 +547,30 @@
                 </p>
             </div>
         </div>
-        <div class="row">
-            <!-- team 1 -->
-            @forelse ($galleries as $gallery)
-                <div class="col-lg-3 mb-2">
-                    <div class="team-member">
-                        <div class="img-wrapper">
-                            <img src="{{ asset('storage/Gallery')}}/{{$gallery->image }}" alt="photo" style="height: 200px"/>
-                            <div class="overlay"></div>
-                            <div class="team-social-links">
-                                <div class="card" style="width: 19.5rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ $gallery->title }}</h5>
-                                        <p class="card-text">{{ $gallery->description }}</p>
+        @if(count($galleries) > 0)
+
+            <div class="row">
+                <!-- team 1 -->
+                @foreach ($galleries as $gallery)
+                    <div class="col-lg-3 mb-2">
+                        <div class="team-member">
+                            <div class="img-wrapper">
+                                <img src="{{ asset('storage/Gallery')}}/{{$gallery->image }}" alt="photo" style="height: 200px"/>
+                                <div class="overlay"></div>
+                                <div class="team-social-links">
+                                    <div class="card" style="width: 19.5rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ $gallery->title }}</h5>
+                                            <p class="card-text">{{ $gallery->description }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @empty
-                <div class="card-body">
-                    <p class="card-text">No Photos are Available.</p>
-                </div>
-            @endforelse
-        </div>
+                @endforeach
+            </div>
+        @endif
     </div>
 </section>
 <!-- projects -->
@@ -592,121 +591,141 @@
     </div>
     <div id="project-slider" class="owl-theme owl-carousel">
         <!-- project 1 -->
-        <div class="project">
-            <img
-                src="/images/absa.png"
-                style="width: auto; height: 200px; margin:auto;"
-                alt="cross gen"
-            />
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>Banks</h1>
-                <a href="#" class="btn btn-brand">See More</a>
+        @if($bank))
+
+            <div class="project">
+                <img
+                    src="{{asset('storage/Partners/'.$bank->image)}}"
+                    style="width: auto; height: 200px; margin:auto;"
+                    alt="cross gen"
+                />
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1>{{$bank->category}}</h1>
+                    <a href="{{route('landing.banks')}}" class="btn btn-brand">See More</a>
+                </div>
             </div>
-        </div>
+        @endif
         <!-- project 2 -->
-        <div class="project">
-            <img
-                style="width: auto; height: 200px; margin:auto;"
-                src="/images/sheraton.png"
-                alt="cross gen"
-            />
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>Hotels</h1>
-                <a href="#" class="btn btn-brand">See More</a>
+        @if($hotel)
+            <div class="project">
+                <img
+                    src="{{asset('storage/Partners/'.$hotel->image)}}"
+                    style="width: auto; height: 200px; margin:auto;"
+                    alt="cross gen"
+                />
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1>{{$hotel->category}}</h1>
+                    <a href="{{route('landing.hotels')}}" class="btn btn-brand">See More</a>
+                </div>
             </div>
-        </div>
+        @endif
         <!-- project 3 -->
-        <div class="project">
-            <img
-                src="https://www.ktaadvocates.com/wp-content/uploads/2023/06/kta-alliotte-logo-color.svg"
-                alt="cross gen"
-            />
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>Law Firms</h1>
-                <a href="#" class="btn btn-brand">See More</a>
+        @if($law_firm)
+            <div class="project">
+                <img
+                    src="{{asset('storage/Partners/'.$law_firm->image)}}"
+                    style="width: auto; height: 200px; margin:auto;"
+                    alt="cross gen"
+                />
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1>{{$law_firm->category}}</h1>
+                    <a href="{{route('landing.law_firms')}}" class="btn btn-brand">See More</a>
+                </div>
             </div>
-        </div>
+        @endif
         <!-- project 4 -->
-        <div class="project">
-            <img
-                style="width: auto; height: 200px; margin:auto;"
-                src="/images/liberty.png"
-                alt="cross gen"
-            />
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>Insurance Companies</h1>
-                <a href="#" class="btn btn-brand">See More</a>
+        @if($insurance_company)
+            <div class="project">
+                <img
+                    src="{{asset('storage/Partners/'.$insurance_company->image)}}"
+                    style="width: auto; height: 200px; margin:auto;"
+                    alt="cross gen"
+                />
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1>{{$insurance_company->category}}</h1>
+                    <a href="{{route('landing.insurance_companies')}}" class="btn btn-brand">See More</a>
+                </div>
             </div>
-        </div>
+        @endif
         <!-- project 5 -->
-        <div class="project">
-            <img
-                src="/images/case.png"
-                style="width: auto; height: 200px; margin:auto;"
-                alt="cross gen"
-            />
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>Hospitals</h1>
-                <a href="#" class="btn btn-brand">See More</a>
+        @if($hospital)
+            <div class="project">
+                <img
+                    src="{{asset('storage/Partners/'.$hospital->image)}}"
+                    style="width: auto; height: 200px; margin:auto;"
+                    alt="cross gen"
+                />
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1>{{$hospital->category}}</h1>
+                    <a href="{{route('landing.hospitals')}}" class="btn btn-brand">See More</a>
+                </div>
             </div>
-        </div>
+        @endif
         <!-- project 6 -->
-        <div class="project">
-            <img
-                src="/images/golf.png"
-                style="width: auto; height: 200px; margin:auto;"
-                alt="cross gen"
-            />
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>Golf Clubs</h1>
-                <a href="#" class="btn btn-brand">See More</a>
+        @if($golf_club)
+            <div class="project">
+                <img
+                    src="{{asset('storage/Partners/'.$golf_club->image)}}"
+                    style="width: auto; height: 200px; margin:auto;"
+                    alt="cross gen"
+                />
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1>{{$golf_club->category}}</h1>
+                    <a href="{{route('landing.golf_clubs')}}" class="btn btn-brand">See More</a>
+                </div>
             </div>
-        </div>
+        @endif
         <!-- project 7 -->
-        <div class="project">
-            <img
-                src="/images/nextmedia.png"
-                style="width: 90%; height: 200px; margin:auto;"
-                alt="cross gen"
-            />
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>Media Companies</h1>
-                <a href="#" class="btn btn-brand">See More</a>
+        @if($media_company)
+            <div class="project">
+                <img
+                    src="{{asset('storage/Partners/'.$media_company->image)}}"
+                    style="width: auto; height: 200px; margin:auto;"
+                    alt="cross gen"
+                />
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1>{{$media_company->category}}</h1>
+                    <a href="{{route('landing.media_companies')}}" class="btn btn-brand">See More</a>
+                </div>
             </div>
-        </div>
+        @endif
         <!-- project 8 -->
-        <div class="project">
-            <img
-                src="/images/giz.png"
-                style="width: auto; height: 200px; margin:auto;"
-                alt="cross gen"
-            />
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>International Agencies</h1>
-                <a href="#" class="btn btn-brand">See More</a>
+        @if($international_agency)
+            <div class="project">
+                <img
+                    src="{{asset('storage/Partners/'.$international_agency->image)}}"
+                    style="width: auto; height: 200px; margin:auto;"
+                    alt="cross gen"
+                />
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1>{{$international_agency->category}}</h1>
+                    <a href="{{route('landing.international_agencies')}}" class="btn btn-brand">See More</a>
+                </div>
             </div>
-        </div>
+        @endif
         <!-- project 9 -->
-        <div class="project">
-            <img
-                src="/images/ura.png"
-                style="width: 90%; height: 200px; margin:auto;"
-                alt="cross gen"
-            />
-            <div class="overlay"></div>
-            <div class="content">
-                <h1>Government Agencies</h1>
-                <a href="#" class="btn btn-brand">See More</a>
+        @if($government_agency)
+            <div class="project">
+                <img
+                    src="{{asset('storage/Partners/'.$government_agency->image)}}"
+                    style="width: auto; height: 200px; margin:auto;"
+                    alt="cross gen"
+                />
+                <div class="overlay"></div>
+                <div class="content">
+                    <h1>{{$government_agency->category}}</h1>
+                    <a href="{{route('landing.government_agencies')}}" class="btn btn-brand">See More</a>
+                </div>
             </div>
-        </div>
+        @endif
         <!-- project ends -->
     </div>
 </section>
@@ -740,13 +759,13 @@
                                 <div class="overlay"></div>
                                 <div class="team-social-links">
                                     @if($member->facebook != '')
-                                        <a href="{{$member->facebook}}" target="_blank" rel="noreferrer"><i class="bx bxl-facebook"></i></a>
+                                        <a href="{{$member->facebook}}" target="_blank" rel="noreferrer noopener"><i class="bx bxl-facebook"></i></a>
                                     @endif
                                         @if($member->twitter != '')
-                                            <a href="{{$member->twitter}}" target="_blank" rel="noreferrer"><i class="bx bxl-twitter"></i></a>
+                                            <a href="{{$member->twitter}}" target="_blank" rel="noreferrer noopener"><i class="bx bxl-twitter"></i></a>
                                         @endif
                                         @if($member->instagram != '')
-                                            <a href="{{$member->instagram}}" target="_blank" rel="noreferrer"><i class="bx bxl-instagram"></i></a>
+                                            <a href="{{$member->instagram}}" target="_blank" rel="noreferrer noopener"><i class="bx bxl-instagram"></i></a>
                                         @endif
                                 </div>
                             </div>
