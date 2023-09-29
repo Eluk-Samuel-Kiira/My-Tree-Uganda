@@ -26,9 +26,9 @@
                             </div>
                         </form>
                     @elseif(request()->query('status')== 'cancelled')
-                    <script>
-                        window.location.href = "{{route('payment.modes')}}";
-                    </script>
+                        <script>
+                            window.location.href = "{{route('payment.modes')}}";
+                        </script>
                     @endif
                 </div>
             </div>
