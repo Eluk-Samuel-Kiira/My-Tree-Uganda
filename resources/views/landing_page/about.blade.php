@@ -162,7 +162,7 @@
                                         Contribute to our work restoring National Forests Reserves in Uganda National Forests
                                     </p>
                                     <div class="float-sm-start mt-3">
-                                        <a href="#" class="btn btn-brand py-2">Fund A Project</a>
+                                        <a href="/#donate" class="btn btn-brand py-2">Fund A Project</a>
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +190,7 @@
                                         materials for our educational campaigns
                                     </p>
                                     <div class="float-sm-start mt-3">
-                                        <a href="#" class="btn btn-brand py-2">Donate to educational campaigns</a>
+                                        <a href="/#donate" class="btn btn-brand py-2">Donate to educational campaigns</a>
                                     </div>
                                 </div>
                             </div>
