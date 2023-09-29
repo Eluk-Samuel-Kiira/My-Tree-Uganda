@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Models\Friend;
 use App\Models\Contact;
+use App\Models\Letters;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
@@ -58,9 +59,17 @@ class LandingPageController extends Controller
             'email' => $request->email,
             'message' => $request->message,
         ];
-        Mail::to('ashrafenjer1@gmail.com')->send(new ContactMail($emailData));
+        Mail::to('mytreeuganda@gmail.com')->send(new ContactMail($emailData));
 
         return redirect()->to('/#contact')->with('status', 'Email Sent Successfully');
+    }
+
+    public function emailInfomation(Request $request)
+    {
+        $news_letter = new Letters();
+        $news_letter->email = $request->email;
+        $news_letter->save();
+        return redirect()->to('/#contact')->with('status', 'Subscribed Successfully');
     }
 
 }
