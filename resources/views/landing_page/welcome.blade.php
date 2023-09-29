@@ -100,7 +100,7 @@
                     <a class="nav-link" href="#contact">Contact Us</a>
                 </li>
             </ul>
-            <a href="#donate" class="btn btn-brand-2 ms-lg-3">
+            <a href="#donate" class="btn btn-brand ms-lg-3">
                 Donate
             </a>
             @if (Route::has('login'))
