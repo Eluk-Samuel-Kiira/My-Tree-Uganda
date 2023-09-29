@@ -35,7 +35,7 @@ Route::get("/Government Agencies",[LandingPageController::class,'governmentAgenc
 Route::get("/Insurance Companies",[LandingPageController::class,'insuranceCompaniesPage'])->name('landing.insurance_companies');
 Route::get("/Media Companies",[LandingPageController::class,'mediaCompaniesPage'])->name('landing.media_companies');
 Route::post("/contact-form",[LandingPageController::class,'contactInfomation'])->name('contact.store');
-branRoute::post("/email-form",[LandingPageController::class,'emailInfomation'])->name('email.store');
+Route::post("/email-form",[LandingPageController::class,'emailInfomation'])->name('email.store');
 
 //landing page routes
 
