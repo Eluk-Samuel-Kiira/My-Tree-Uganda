@@ -8,6 +8,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\FriendController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\PartnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,15 @@ use App\Http\Controllers\TeamController;
 Route::get("/",[LandingPageController::class,'welcomePage'])->name('landing.index');
 Route::get("/friends",[LandingPageController::class,'friendsPage'])->name('landing.friends');
 Route::get("/about",[LandingPageController::class,'aboutUsPage'])->name('landing.about');
+Route::get("/Banks",[LandingPageController::class,'banksPage'])->name('landing.banks');
+Route::get("/Law Firms",[LandingPageController::class,'lawFirmsPage'])->name('landing.law_firms');
+Route::get("/Hotels",[LandingPageController::class,'hotelsPage'])->name('landing.hotels');
+Route::get("/Hospitals",[LandingPageController::class,'hospitalsPage'])->name('landing.hospitals');
+Route::get("/Golf Clubs",[LandingPageController::class,'golfClubsPage'])->name('landing.golf_clubs');
+Route::get("/International Agencies",[LandingPageController::class,'internationalAgenciesPage'])->name('landing.international_agencies');
+Route::get("/Government Agencies",[LandingPageController::class,'governmentAgenciesPage'])->name('landing.government_agencies');
+Route::get("/Insurance Companies",[LandingPageController::class,'insuranceCompaniesPage'])->name('landing.insurance_companies');
+Route::get("/Media Companies",[LandingPageController::class,'mediaCompaniesPage'])->name('landing.media_companies');
 Route::post("/contact-form",[LandingPageController::class,'contactInfomation'])->name('contact.store');
 
 //landing page routes
@@ -47,6 +57,7 @@ Route::middleware([
     Route::resource('gallery', GalleryController::class);
     Route::resource('friend', FriendController::class);
     Route::resource('team', TeamController::class);
+    Route::resource('partner', PartnerController::class);
 
     //non resources
     Route::get('/users/crud/index', [UserController::class, 'userIndex'])->name('users.index');

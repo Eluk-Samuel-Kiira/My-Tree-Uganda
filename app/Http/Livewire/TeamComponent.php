@@ -16,7 +16,7 @@ class TeamComponent extends Component
                 $query->where('name', 'like', '%' . $this->search . '%')
                     ->orWhere('title', 'like', '%' . $this->search . '%');
             })
-            ->get();
+            ->paginate(5);
 
         return view('livewire.team-component',[
             'team_all'=> $team_all,

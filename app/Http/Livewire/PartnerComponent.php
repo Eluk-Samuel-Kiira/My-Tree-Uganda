@@ -2,22 +2,22 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Friend;
+use App\Models\Partner;
 use Livewire\Component;
 
-class FriendComponent extends Component
+class PartnerComponent extends Component
 {
     public $search ='';
     public function render()
     {
-        $friends = Friend::whereNot('deleted', 1)
+        $partners = Partner::whereNot('deleted', 1)
             ->where(function ($query) {
                 $query->where('name', 'like', '%' . $this->search . '%')
-                    ->orWhere('title', 'like', '%' . $this->search . '%');
+                    ->orWhere('category', 'like', '%' . $this->search . '%');
             })
             ->paginate(5);
-        return view('livewire.friend-component',[
-            'friends'=>$friends,
+        return view('livewire.partner-component',[
+            'partners'=>$partners,
         ]);
     }
 }
