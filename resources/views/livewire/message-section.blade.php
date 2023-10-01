@@ -105,12 +105,12 @@
                                                         @php
                                                             try {
                                                                 $decryptedMessage = \Illuminate\Support\Facades\Crypt::decryptString($chat->message);
+                                                                echo $decryptedMessage;
                                                                 // Output or process the decrypted message here
                                                                 } catch (\Illuminate\Contracts\Encryption\DecryptException $e) {
                                                                     // Handle the decryption exception, e.g., log it or return an error message
                                                                 }
                                                         @endphp
-                                                        {{$decryptedMessage}}
                                                     </div>
                                                 </div>
                                                 <span class="text-xs text-gray-400 ml-3">{{$chat->created_at->format('H:i')}}</span>
@@ -141,7 +141,6 @@
     </div>
 
 </div>
-
 
 
 
