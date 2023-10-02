@@ -36,6 +36,7 @@ Route::get("/Insurance Companies",[LandingPageController::class,'insuranceCompan
 Route::get("/Media Companies",[LandingPageController::class,'mediaCompaniesPage'])->name('landing.media_companies');
 Route::post("/contact-form",[LandingPageController::class,'contactInfomation'])->name('contact.store');
 Route::post("/email-form",[LandingPageController::class,'emailInfomation'])->name('email.store');
+Route::get("/download_resources",[LandingPageController::class,'resourcePage'])->name('resource.download');
 
 //landing page routes
 

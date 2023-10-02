@@ -175,4 +175,7 @@ class LandingPageController extends Controller
         return redirect()->to('/#contact')->with('status', 'Subscribed Successfully');
     }
 
+    public function resourcePage(){
+        return view('landing_page.resources');
+    }
 }

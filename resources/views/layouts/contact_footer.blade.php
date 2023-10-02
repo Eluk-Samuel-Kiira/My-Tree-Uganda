@@ -95,7 +95,7 @@
                 <h6 class="text-uppercase font-weight-bold mb-4">Reports</h6>
                 <p class="text-muted mb-2">Annual Reports, Financial Reports, Partner Reports</p>
                 <a
-                    href="#"
+                    href="{{route('resource.download')}}"
                     class="btn btn-brand text-uppercase"
                 >Download Reports</a
                 >
