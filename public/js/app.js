@@ -7,7 +7,7 @@ $(document).ready(function () {
     items: 1,
     dots: false,
     smartSpeed: 1000,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1000,
     navText: ["<", ">"],
     responsive: {

@@ -330,7 +330,9 @@
             <div class="col-lg-4 col-sm-8">
                 <div class="service-box">
               <span class="service-icon"><i>
-                <img src="/images/afforestation.jpg">
+                  <a href="{{route('landing.about')}}">
+                      <img src="/images/afforestation.jpg">
+                  </a>
               </i></span>
                     <h5 class="about-h5">Afforestation Projects</h5>
                     <p>
@@ -342,7 +344,9 @@
             <div class="col-lg-4 col-sm-8">
                 <div class="service-box">
               <span class="service-icon"><i>
-                <img src="/images/educational.jpg">
+                  <a href="{{route('landing.about')}}">
+                      <img src="/images/educational.jpg">
+                  </a>
               </i></span>
                     <h5 class="about-h5">Educational Campaigns</h5>
                     <p>
@@ -354,7 +358,9 @@
             <div class="col-lg-4 col-sm-8">
                 <div class="service-box">
               <span class="service-icon"><i>
-                <img src="/images/coorporate_planting.jpg">
+                  <a href="{{route('landing.about')}}">
+                      <img src="/images/coorporate_planting.jpg">
+                  </a>
               </i></span>
                     <h5 class="about-h5">Corporate Tree Planting Events</h5>
                     <p>
@@ -386,17 +392,21 @@
             <div class="col-md-4 text-start">
                 <!-- Vertical Navigation -->
                 <ul class="nav flex-column nav-tabs card-header-tabs" id="impact-list" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#schools" role="tab" aria-controls="schools" aria-selected="true">In Schools</a>
+                    <li class="nav-item d-flex align-items-end">
+                        <a class="nav-link active" href="#schools" role="tab" aria-controls="schools" aria-selected="true">
+                            <i class='bx bxs-tree'></i> In Schools</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#forests" role="tab" aria-controls="forests" aria-selected="false">In Natural Forests</a>
+                    <li class="nav-item d-flex align-items-end">
+                        <a class="nav-link" href="#forests" role="tab" aria-controls="forests" aria-selected="false">
+                            <i class='bx bxs-tree'></i> In Natural Forests</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#roads" role="tab" aria-controls="roads" aria-selected="false">On Roadsides</a>
+                    <li class="nav-item d-flex align-items-end">
+                        <a class="nav-link" href="#roads" role="tab" aria-controls="roads" aria-selected="false">
+                            <i class='bx bxs-tree'></i> On Roadsides</a>
                     </li>
-                    <li class="nav-item last-impact">
-                        <a class="nav-link" href="#religion" role="tab" aria-controls="religion" aria-selected="false">In Religious Institutions</a>
+                    <li class="nav-item last-impact d-flex align-items-end">
+                        <a class="nav-link" href="#religion" role="tab" aria-controls="religion" aria-selected="false">
+                            <i class='bx bxs-tree'></i> In Religious Institutions</a>
                     </li>
                 </ul>
             </div>
@@ -408,7 +418,7 @@
 
                             <div class="tab-pane active" id="schools" role="tabpanel">
                                 <div class="row">
-                                    <p class="text-center">
+                                    <p class="text-center" style="font-weight: bolder">
                                         Our initiatives in schools are designed to inspire, educate, and empower students,
                                         teachers, and communities. By partnering with schools, we aim to create a ripple effect
                                         of environmental awareness, action, and stewardship. From planting trees to conducting educational
@@ -418,26 +428,28 @@
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
-                                        <p>More than</p>
-                                        <div class="display-3" id="schools-1"></div>
-                                        <p>students engaged</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="schools-1" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">students engaged</p>
                                     </div>
                                     <div class="col-6 text-center">
-                                        <div class="display-3" id="schools-2"></div>
-                                        <p>schools participated</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="schools-2" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">schools participated</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <div class="display-3" id="schools-3"></div>
-                                        <p>trees grown</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="schools-3" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">trees grown</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="tab-pane" id="forests" role="tabpanel" aria-labelledby="history-tab">
                                 <div class="row">
-                                    <p class="text-center">
+                                    <p class="text-center" style="font-weight: bolder">
                                         In partnership with local communities and conservation organizations, we work tirelessly
                                         to combat deforestation, restore damaged habitats, and safeguard the unique flora and
                                         fauna that call these forests home. Through tree planting, habitat restoration,
@@ -448,27 +460,28 @@
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
-                                        <div class="display-3" id="forests-1"></div>
-                                        <p>trees planted</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="forests-1" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">trees planted</p>
                                     </div>
                                     <div class="col-6 text-center">
-                                        <p>More than</p>
-                                        <div class="display-3" id="forests-2"></div>
-                                        <p>tree species</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="forests-2" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">tree species</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <p>More than</p>
-                                        <div class="display-3" id="forests-3"></div>
-                                        <p>acres of reafforestation</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="forests-3" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">acres of reafforestation</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="tab-pane" id="roads" role="tabpanel" aria-labelledby="deals-tab">
                                 <div class="row">
-                                    <p class="text-center">
+                                    <p class="text-center" style="font-weight: bolder">
                                         By planting trees and nurturing greenery along roadsides, we not only beautify
                                         our communities but also contribute to the well-being of city dwellers.
                                         Trees lining our streets act as natural air purifiers, reducing pollution,
@@ -478,27 +491,28 @@
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
-                                        <div class="display-3" id="roads-1"></div>
-                                        <p>Trees planted</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="roads-1" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">Trees planted</p>
                                     </div>
                                     <div class="col-6 text-center">
-                                        <p>More than</p>
-                                        <div class="display-3" id="roads-2"></div>
-                                        <p>highways greened</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="roads-2" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">highways greened</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <p>More than</p>
-                                        <div class="display-3" id="roads-3"></div>
-                                        <p>drivers and pedestrians involoved</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="roads-3" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">drivers and pedestrians involoved</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="tab-pane" id="religion" role="tabpanel" aria-labelledby="deals-tab">
                                 <div class="row">
-                                    <p class="text-center">
+                                    <p class="text-center" style="font-weight: bolder">
                                         In collaboration with religious communities, we plant trees as symbols of unity and
                                         care for the environment. These trees not only enhance the beauty of religious
                                         spaces but also serve as living reminders of our sacred duty to protect the planet.
@@ -507,20 +521,21 @@
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
-                                        <div class="display-3" id="religion-1"></div>
-                                        <p>trees planted</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="religion-1" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">trees planted</p>
                                     </div>
                                     <div class="col-6 text-center">
-                                        <p>More than</p>
-                                        <div class="display-3" id="religion-2"></div>
-                                        <p>Churches and Mosques greened</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="religion-2" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">Churches and Mosques greened</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12 text-center">
-                                        <p>More than</p>
-                                        <div class="display-3" id="religion-3"></div>
-                                        <p>participants in peer learning sessions</p>
+                                        <p style="font-weight: bold" class="text-primary">More than</p>
+                                        <div class="display-3" id="religion-3" style="font-weight: bolder"></div>
+                                        <p style="font-weight: bold" class="text-primary">participants in peer learning sessions</p>
                                     </div>
                                 </div>
                             </div>
