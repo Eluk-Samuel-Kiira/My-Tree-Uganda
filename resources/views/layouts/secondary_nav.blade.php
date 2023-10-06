@@ -9,14 +9,19 @@
                 </p>
                 <p>
                     <i class="bx bxs-phone-call"></i>
-                    <span>+256 760415446</span>
+                    <span>+256-760-415446 / +256-754754759</span>
+                </p>
+                <p>
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>Kisasi, Kyanja Road, Kampala, Uganda</span>
                 </p>
             </div>
             <div class="col-md-auto mb-2 mb-md-0">
                 <div class="social-links">
-                    <a href="#"><i class="bx bxl-facebook"></i></a>
-                    <a href="#"><i class="bx bxl-twitter"></i></a>
-                    <a href="#"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://m.facebook.com/MY-TREE-initiative-125019115558666/?ref=bookmarks" target="_blank" rel="noreferrer noopener"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://twitter.com/mytreeUganda?s=09" target="_blank" rel="noreferrer noopener"><i class="bx bxl-twitter"></i></a>
+                    <a href="https://www.instagram.com/mytreeuganda/" target="_blank" rel="noreferrer noopener"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://m.youtube.com/channel/UC855xrO0nkHN4t8SOFCR_tw" target="_blank" rel="noreferrer noopener"><i class="bx bxl-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -54,10 +59,9 @@
                     <a class="nav-link" href="#contact">Contact Us</a>
                 </li>
             </ul>
-            <a
-                href="#"
-                class="btn btn-brand ms-lg-3"
-            >Donate</a>
+            <button type="button" class="btn btn-brand ms-lg-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Donate
+            </button>
             @if (Route::has('login'))
                 @auth
                     <a href="{{ url('/dashboard') }}" class="btn btn-brand-2 ms-lg-3">Dashboard</a>

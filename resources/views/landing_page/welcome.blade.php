@@ -37,14 +37,19 @@
                 </p>
                 <p>
                     <i class="bx bxs-phone-call"></i>
-                    <span>+256 760415446</span>
+                    <span>+256-760-415446 / +256-754754759</span>
+                </p>
+                <p>
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <span>Kisasi, Kyanja Road, Kampala, Uganda</span>
                 </p>
             </div>
             <div class="col-md-auto mb-2 mb-md-0">
                 <div class="social-links">
-                    <a href="#"><i class="bx bxl-facebook"></i></a>
-                    <a href="#"><i class="bx bxl-twitter"></i></a>
-                    <a href="#"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://m.facebook.com/MY-TREE-initiative-125019115558666/?ref=bookmarks" target="_blank" rel="noreferrer noopener"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://twitter.com/mytreeUganda?s=09" target="_blank" rel="noreferrer noopener"><i class="bx bxl-twitter"></i></a>
+                    <a href="https://www.instagram.com/mytreeuganda/" target="_blank" rel="noreferrer noopener"><i class="bx bxl-instagram"></i></a>
+                    <a href="https://m.youtube.com/channel/UC855xrO0nkHN4t8SOFCR_tw" target="_blank" rel="noreferrer noopener"><i class="bx bxl-youtube"></i></a>
                 </div>
             </div>
         </div>
@@ -384,7 +389,8 @@
             <div class="col-12 intro-impact text-center">
                 <h1 style="margin-top: 20px;" class="display-4">Our Impact</h1>
                 <p>
-                    Over 2 Million Trees Grown Since 2019.
+                    Over 2 Million Trees Grown Since 2019. We plant trees in Uganda  with a particular focus in Eastern,
+                    Central and Northern regions covering Jinja, Mbale, Kampala, Wakiso, Mityana, Nakasongola, and Gulu Districts.
                 </p>
             </div>
         </div>
@@ -553,12 +559,11 @@
     <div class="container">
         <div class="row">
             <div class="col-12 intro text-center">
-                <h1 style="margin-top: 20px;">Project Gallery/Portfolio</h1>
+                <h1 style="margin-top: 20px;">Project Photos</h1>
                 <p>
-                    As a team, we belief planing trees are fundamental to life
-                    in different aspects such as breathing in clean air, cooling the
-                    planet, carbon capture, reduce the effects of floods etc. We are thrilled
-                    to share with you some of our photos.
+                    Step into the visual journey of My Tree Initiative as we present a captivating collection of project photos. These images capture the essence of our mission in vibrant detail,
+                    offering a visual journey into the remarkable work we do. Explore the moments that tell the story of our dedication to a greener planet through the lens of these inspiring photographs.
+                    tree planting, one captivating image at a time.
                 </p>
             </div>
         </div>
@@ -597,9 +602,11 @@
             <div class="col-12 intro text-center">
                 <h1 style="margin-top: 20px;">Our Partners</h1>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
-                    ipsa rerum atque quaerat ullam ad eos, sit perferendis sapiente
-                    ducimus voluptatibus tempore sunt autem repellat?
+                    In a world where business transcends boundaries, these have chosen to stand with us, not just as partners
+                    but as champions of change. Their decision to align their corporate values with our mission has brought
+                    us closer to realizing our vision for a better world. Their belief in the greater good, commitment to
+                    sustainability and willingness to invest in a brighter future are qualities we deeply admire. Their
+                    actions speak volumes, inspiring others to follow suit and magnify the positive influence of our collective efforts.
                 </p>
             </div>
         </div>
@@ -753,9 +760,11 @@
             <div class="col-12 intro text-center">
                 <h1 style="margin-top: 20px;">Meet our team</h1>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure
-                    ipsa rerum atque quaerat ullam ad eos, sit perferendis sapiente
-                    ducimus voluptatibus tempore sunt autem repellat?
+                    Meet our dynamic group of visionary individuals who are not just the leaders of tomorrow but
+                    the trailblazers of today. With a fresh perspective, unwavering dedication, and a commitment
+                    to innovation, we are steering our organization toward a brighter future. Our passion for
+                    excellence and drive to make a difference set the stage for our impactful leadership that's
+                    ready to inspire and shape the world.
                 </p>
             </div>
         </div>

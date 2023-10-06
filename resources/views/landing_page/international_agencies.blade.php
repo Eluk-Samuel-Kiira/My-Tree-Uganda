@@ -1,3 +1,4 @@
+@include('layouts.modal')
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,3 +1,4 @@
+@include('layouts.modal')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +34,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-12 text-center">
-            <h1 style="margin-top: 20px;">Friends of My Tree Initiative</h1>
+            <h1 style="margin-top: 20px;">Friends of My Tree Donors Group</h1>
             <p>
                 Welcome to the Friends of My Tree Donors Group, where your annual membership donations  play a pivotal role in supporting our operational expenses. By becoming an annual member, you become an integral part of our mission to protect and preserve trees. Your contributions directly fuel our efforts to make the world greener. In return, enjoy a range of exclusive benefits that deepen your connection to nature and our community. Join us today and make a lasting impact while enjoying the rewards of being a Friend of My Tree.
             </p>

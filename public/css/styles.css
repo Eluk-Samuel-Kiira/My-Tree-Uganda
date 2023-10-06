@@ -56,8 +56,12 @@ section{
 }
 
 .intro p{
-    max-width: 500px;
+    max-width: 70%;
     margin: auto;
+    font-weight: bold;
+}
+.intro h1{
+    color: #307be6;
 }
 
 /* BUTTONS ------------------------------------------- */
@@ -268,7 +272,7 @@ section{
     }
 
     .about-h5{
-        color: black;
+        color: #307be6;
     }
     /* MILESTONES --------------------------------------------- */
     #milestones {
@@ -571,6 +575,9 @@ section{
     margin-bottom: 20px !important;
     font-weight: 600;
 }
+.intro-impact h1{
+    color: #307be6;
+}
 #impact-list li a{
     font-size: 20px;
     font-weight: 700;
@@ -751,11 +758,11 @@ section{
 /*-----partner background---------*/
 
 .accordion-body a{
-    color: #00880F;
+    color: #307be6;
     font-weight: bold;
 }
 .accordion-body a:hover{
-    color: #307be6;
+    color: #00880F;
 }
 /*------------resources---------------*/
 .card1 {
@@ -841,5 +848,8 @@ section{
 
 .rounded-circle {
     border-radius: 50%!important;
+}
+.footer-h6{
+    color: #307be6;
 }
 
