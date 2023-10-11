@@ -423,14 +423,7 @@
                         <div class="tab-content mt-3">
 
                             <div class="tab-pane active" id="schools" role="tabpanel">
-                                <div class="row">
-                                    <p class="text-center" style="font-weight: bolder">
-                                        Our initiatives in schools are designed to inspire, educate, and empower students,
-                                        teachers, and communities. By partnering with schools, we aim to create a ripple effect
-                                        of environmental awareness, action, and stewardship. From planting trees to conducting educational
-                                        programs, our efforts leave a lasting imprint on both the environment and young minds.
-                                    </p>
-                                </div>
+
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
@@ -451,18 +444,18 @@
                                         <p style="font-weight: bold" class="text-primary">trees grown</p>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <p class="text-center" style="font-weight: bolder">
+                                        Our initiatives in schools are designed to inspire, educate, and empower students,
+                                        teachers, and communities. By partnering with schools, we aim to create a ripple effect
+                                        of environmental awareness, action, and stewardship. From planting trees to conducting educational
+                                        programs, our efforts leave a lasting imprint on both the environment and young minds.
+                                    </p>
+                                </div>
                             </div>
 
                             <div class="tab-pane" id="forests" role="tabpanel" aria-labelledby="history-tab">
-                                <div class="row">
-                                    <p class="text-center" style="font-weight: bolder">
-                                        In partnership with local communities and conservation organizations, we work tirelessly
-                                        to combat deforestation, restore damaged habitats, and safeguard the unique flora and
-                                        fauna that call these forests home. Through tree planting, habitat restoration,
-                                        and sustainable practices, our efforts aim to ensure these forests thrive for generations
-                                        to come.
-                                    </p>
-                                </div>
+
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
@@ -483,17 +476,19 @@
                                         <p style="font-weight: bold" class="text-primary">acres of reafforestation</p>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <p class="text-center" style="font-weight: bolder">
+                                        In partnership with local communities and conservation organizations, we work tirelessly
+                                        to combat deforestation, restore damaged habitats, and safeguard the unique flora and
+                                        fauna that call these forests home. Through tree planting, habitat restoration,
+                                        and sustainable practices, our efforts aim to ensure these forests thrive for generations
+                                        to come.
+                                    </p>
+                                </div>
                             </div>
 
                             <div class="tab-pane" id="roads" role="tabpanel" aria-labelledby="deals-tab">
-                                <div class="row">
-                                    <p class="text-center" style="font-weight: bolder">
-                                        By planting trees and nurturing greenery along roadsides, we not only beautify
-                                        our communities but also contribute to the well-being of city dwellers.
-                                        Trees lining our streets act as natural air purifiers, reducing pollution,
-                                        and offering respite from the urban hustle and bustle
-                                    </p>
-                                </div>
+
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
@@ -514,16 +509,18 @@
                                         <p style="font-weight: bold" class="text-primary">drivers and pedestrians involoved</p>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <p class="text-center" style="font-weight: bolder">
+                                        By planting trees and nurturing greenery along roadsides, we not only beautify
+                                        our communities but also contribute to the well-being of city dwellers.
+                                        Trees lining our streets act as natural air purifiers, reducing pollution,
+                                        and offering respite from the urban hustle and bustle
+                                    </p>
+                                </div>
                             </div>
 
                             <div class="tab-pane" id="religion" role="tabpanel" aria-labelledby="deals-tab">
-                                <div class="row">
-                                    <p class="text-center" style="font-weight: bolder">
-                                        In collaboration with religious communities, we plant trees as symbols of unity and
-                                        care for the environment. These trees not only enhance the beauty of religious
-                                        spaces but also serve as living reminders of our sacred duty to protect the planet.
-                                    </p>
-                                </div>
+
                                 <div class="row my-3 border border-top-0 border-start-0 border-end-0 border-light">
                                     <!-- This row spans 2 columns -->
                                     <div class="col-6 mb-3 rowspan-2 text-center border border-top-0 border-start-0 border-bottom-0 border-light">
@@ -543,6 +540,13 @@
                                         <div class="display-3" id="religion-3" style="font-weight: bolder"></div>
                                         <p style="font-weight: bold" class="text-primary">participants in peer learning sessions</p>
                                     </div>
+                                </div>
+                                <div class="row">
+                                    <p class="text-center" style="font-weight: bolder">
+                                        In collaboration with religious communities, we plant trees as symbols of unity and
+                                        care for the environment. These trees not only enhance the beauty of religious
+                                        spaces but also serve as living reminders of our sacred duty to protect the planet.
+                                    </p>
                                 </div>
                             </div>
                         </div>
