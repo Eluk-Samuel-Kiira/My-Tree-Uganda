@@ -16,7 +16,7 @@
                         </div><hr>
                         <div class="d-flex">
                             <i class="bi bi-envelope-fill"></i>
-                            <p>Email:- mytreeuganda@gmail.com</p>
+                            <p>Email:- info@mytreeuganda.org</p>
                         </div><hr>
                         <div class="d-flex">
                             <i>
