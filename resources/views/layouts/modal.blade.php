@@ -17,7 +17,7 @@
                             <img src="{{ asset('images/airtelmomo.png')}}" alt="AIRTEL MOMO" style="max-width: 100px" />
                             <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" style="width: 100%; margin: 0 auto;">
                                 @csrf
-                                <x-input class="block mt-1 w-full" type="hidden" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
+                                <x-input class="block mt-1 w-full" type="hidden" name="public_key" value="FLWPUBK-39a44370d7d5c7953cc7e764d212cd03-X" />
                                 <x-input class="block mt-1 w-full" type="hidden" name="tx_ref" value="{{ $tx_ref }}" />
                                 <x-input class="block mt-1 w-full" type="hidden" name="currency" value="UGX" />
                                 <x-input class="block mt-1 w-full" type="hidden" name="meta[token]" value="54" />
@@ -77,7 +77,7 @@
                             <img src="{{ asset('images/visamaster.png')}}" alt="CREDIT CARD" style="max-width: 100px; height: 52px;" />
                             <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay" style="width: 100%; margin: 0 auto;">
                                 @csrf
-                                <x-input class="block mt-1 w-full" type="hidden" name="public_key" value="FLWPUBK_TEST-54f16ec2c53bdffdb05c7452003a717b-X" />
+                                <x-input class="block mt-1 w-full" type="hidden" name="public_key" value="FLWPUBK-39a44370d7d5c7953cc7e764d212cd03-X" />
                                 <x-input class="block mt-1 w-full" type="hidden" name="tx_ref" value="{{ $tx_ref }}" />
                                 <x-input class="block mt-1 w-full" type="hidden" name="currency" value="USD" />
                                 <x-input class="block mt-1 w-full" type="hidden" name="meta[token]" value="54" />

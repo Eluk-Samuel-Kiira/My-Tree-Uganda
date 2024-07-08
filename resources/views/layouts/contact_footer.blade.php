@@ -98,16 +98,18 @@
                     class="btn btn-brand text-uppercase"
                 >Download Reports</a
                 >
-
-                <div class="accordion-body">
-                    <a class="nav-link" href="#home">Our Donors</a>
-                    <a class="nav-link" href="#about">Who We Are</a>
-                    <a class="nav-link" href="#impact">Our Impact</a>
-                    <a class="nav-link" href="#projects">Our Projects</a>
-                    <a class="nav-link" href="#partners">Our Partners</a>
-                    <a class="nav-link" href="#team">Our Team</a>
+                <div class="row">
+                    <div class="accordion-body col-lg-6">
+                        <a class="nav-link" href="#projects">Our Projects</a>
+                        <a class="nav-link" href="#partners">Our Partners</a>
+                        <a class="nav-link" href="#team">Our Team</a>
+                    </div>
+                    <div class="accordion-body col-lg-6">
+                        <a class="nav-link" href="#home">Our Donors</a>
+                        <a class="nav-link" href="#about">Who We Are</a>
+                        <a class="nav-link" href="#impact">Our Impact</a>
+                    </div>
                 </div>
-
             </div>
             <div class="col-lg-4 col-md-6 mb-lg-0 mb-4">
                 <h6 class="text-uppercase font-weight-bold mb-4 footer-h6">Our Newsletter</h6>
@@ -126,6 +128,10 @@
                         </div>
                     </div>
                 </form>
+                <h6 class="text-uppercase font-weight-bold mb-4 footer-h6">Developed By</h6>
+                <a href="https://stardena.com" target="_blank">
+                    <img src="/images/stardena_orange.png" alt="" style="width: 180px;" class="mb-3">
+                </a>
             </div>
         </div>
     </div>
